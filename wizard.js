@@ -10,6 +10,15 @@ var player3points=0
 var player4points=0
 var player5points=0
 var player6points=0
+
+var playernameinput = document.getElementById("playernameinput");
+playernameinput.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    addplayer();
+  }
+});
+
+
 function addplayer(){
     
     if(document.getElementById("name1").innerText==""){
@@ -30,6 +39,8 @@ function addplayer(){
     }else if(document.getElementById("name6").innerText==""){
         document.getElementById("name6").innerText=document.getElementById("playernameinput").value
         document.getElementById("playernameinput").value=""
+        document.getElementById("playernameinput").hidden=true
+        startgame()
     }else {
         console.log("you cant add more")
     }

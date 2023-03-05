@@ -6,11 +6,12 @@
                 background-color: black;
             }
             .textcolor{
-                color: yellow;
+                color: rgb(30, 92, 1);
+                text-shadow: 0px 0px 10px red;
                 
             }
             .container{
-                border-color: yellow;
+                border-color: rgb(30, 92, 1);
                 border-style: solid;
                 border-width: 1px;
                 flex:1;
@@ -31,7 +32,15 @@
             }
             .container2{
                 flex:1;
-                border-color: rgb(46, 46, 1);
+                border-color: rgb(1, 6, 46);
+                border-style: solid;
+                border-width: 1px;
+                min-height: 70px;
+
+            }
+            .container3{
+                flex:1;
+                border-color: rgb(4, 45, 0);
                 border-style: solid;
                 border-width: 1px;
                 min-height: 70px;
@@ -48,9 +57,19 @@
             }
             .nameinput{
                 margin-top: 1%;
-                border-color: rgb(255, 242, 0);
+                border-color: rgb(38, 120, 0);
                 background-color: rgb(0, 0, 0);
-                color: rgb(255, 255, 0);
+                color: rgb(50, 158, 0);
+                text-shadow: 0px 0px 10px red;
+                box-shadow:0px 0px 10px rgb(255, 0, 0);;
+                transition: all 0.3s;
+            }
+            .nameinput:hover{
+                border-color: rgb(38, 120, 0);
+                background-color: rgb(0, 0, 0);
+                color: rgb(61, 193, 0);
+                text-shadow: 0px 0px 20px red;
+                box-shadow:0px 0px 10px rgb(255, 0, 0);;
             }
             .textsize{
                 font-size: 50px;
@@ -58,32 +77,44 @@
             .startbutton{
                 margin-top: 10px;
                 padding: 2%;
-                color: yellow;
+                color: rgb(30, 92, 1);
                 background-color: black;
-                border-color: yellow;
-                border-radius: 4%;
+                border-color: rgb(30, 92, 1);
+                border-radius: 4px;
                 transition: all 0.3s;
+                text-shadow: 0px 0px 10px rgb(255, 0, 0);
+                box-shadow:0px 0px 8px red;;
             }
             .startbutton:hover{
-                color: black;
-                background-color: yellow;
+                text-shadow: 0px 0px 20px red;
+                box-shadow:0px 0px 10px red;
+                border-radius: 10px;
+                color: rgb(61, 193, 0);
+                
             }
             .guessbutton{
                 flex:1;
-                margin-top: 10px;
+                margin-top: 5px;
+                margin-bottom: 5px;
                 padding: 2%;
-                color: yellow;
-                background-color: black;
-                border-color: yellow;
+                color: rgb(30, 92, 1);
+                background-color: rgb(0, 0, 0);
+                text-shadow: 0px 0px 15px rgb(255, 0, 0);
+                box-shadow: 0px 0px 10px rgb(176, 0, 0);
+                border-color: rgb(30, 92, 1);
                 width: 100%;
                 transition: all 0.3s;
+                
+            }
+            .guessbutton:hover{
+                color: rgb(61, 192, 0);
                 
             }
             .flex1{
                 flex:1;
             }
             .containerround{
-                border-color: yellow;
+                border-color: rgb(0, 81, 255);
                 border-style: solid;
                 border-width: 1px;
                 flex:1;
@@ -91,7 +122,7 @@
                 text-align:center;
             }
             .roundnummber{
-                border-color: rgb(255, 255, 0);
+                border-color: rgb(0, 34, 255);
                 border-style: solid;
                 border-width: 1px;
                 min-height: 5px;
@@ -102,26 +133,35 @@
                 margin-top: 5%;
                 margin-bottom: 10%;
                 padding: 2%;
-                color: rgb(255, 255, 0);
-                background-color: rgb(0, 180, 9);
-                border-color: yellow;
+                color: rgb(30, 92, 1);
+                background-color: rgb(0, 0, 0);
+                text-shadow: 0px 0px 15px rgb(255, 0, 0);
+                box-shadow: 0px 0px 10px rgb(176, 0, 0);
+                border-color: rgb(30, 92, 1);
                 border-radius: 3px;
                 transition: all 0.5s;
                 flex:1
             }
             .wihlebutton:hover{
-                color:rgb(0, 22, 120);
-                
-                border-color: rgb(0, 22, 120);
+                color: rgb(61, 192, 0);
+                box-shadow: 0px 0px 20px rgb(176, 0, 0);
+                border-color: rgb(0, 176, 6);
             }
             .redbutton{
+                margin-top: 10px;
                 padding: 2%;
-                color: rgb(0, 0, 0);
-                background-color: rgb(180, 0, 0);
-                border-color: yellow;
+                color: rgb(255, 0, 0);
+                background-color: rgb(0, 0, 0);
+                border-color: rgb(1, 9, 92);
                 border-radius: 3px;
                 transition: all 0.5s;
-                flex:1
+                flex:1;
+                text-shadow: 0px 0px 10px rgb(30, 92, 1);
+                box-shadow: 0px 0px 10px rgb(176, 0, 0);
+            }
+            .redbutton:hover{
+                background-color: rgb(157, 0, 0);
+                color:green;
             }
         </style>
 
@@ -131,25 +171,25 @@
 
         <div id="startbox" class="textcolor textsize">
             <div class="flexlist" id="playerdisplay2" >
-                <div>player 1 :&nbsp</div><div id="name1" ></div>
+                <div>Player 1 :&nbsp</div><div id="name1" ></div>
             </div>
             <div class="flexlist" id="playerdisplay2" hidden="true">
-                <div>player 2 :&nbsp</div><div id="name2"></div>
+                <div>Player 2 :&nbsp</div><div id="name2"></div>
             </div>
             <div class="flexlist" id="playerdisplay3" hidden="true">
-                <div>player 3 :&nbsp</div><div id="name3"></div>
+                <div>Player 3 :&nbsp</div><div id="name3"></div>
             </div>
             <div class="flexlist" id="playerdisplay4" hidden="true">
-                <div>player 4 :&nbsp</div><div id="name4"></div>
+                <div>Player 4 :&nbsp</div><div id="name4"></div>
             </div>
             <div class="flexlist" id="playerdisplay5" hidden="true">
-                <div>player 5 :&nbsp</div><div id="name5"></div>
+                <div>Player 5 :&nbsp</div><div id="name5"></div>
             </div>
             <div class="flexlist" id="playerdisplay6" hidden="true">
-                <div>player 6 :&nbsp</div><div id="name6"></div>
+                <div>Player 6 :&nbsp</div><div id="name6"></div>
             </div>
-            <div><input type="text" id="playernameinput" class="nameinput textsize" placeholder="player" maxlength="14"></div>
-            <button class="startbutton textsize" onclick="addplayer()">add player</button>
+            <div><input type="text" id="playernameinput" class="nameinput textsize" placeholder="Player" maxlength="14"></div>
+            <button class="startbutton textsize" onclick="addplayer()">add Player</button>
             <button class="startbutton textsize" onclick="startgame()">Start</button>
             <button class="startbutton textsize">not sure</button>
         </div>
@@ -167,14 +207,14 @@
                         </div>
                         
                         <div class="flexlist2" >
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="guess" id="player1guess"></div>
                             </div>
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="made" id="player1made">&nbsp</div>
                             </div>
                         </div>
-                        <div class="textcolor container2 textsize">
+                        <div class="textcolor container3 textsize">
                             <div class="points" id="player1ponits">&nbsp</div>
                         </div>
                     </div>
@@ -188,14 +228,14 @@
                             </div>
                         </div>
                         <div class="flexlist2" >
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="guess" id="player2guess"></div>
                             </div>
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="made" id="player2made">&nbsp</div>
                             </div>
                         </div>
-                        <div class="textcolor container2 textsize">
+                        <div class="textcolor container3 textsize">
                             <div class="points" id="player2ponits">&nbsp</div>
                         </div>
                     </div>
@@ -209,14 +249,14 @@
                             </div>
                         </div>
                         <div class="flexlist2" >
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="guess" id="player3guess"></div>
                             </div>
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="made" id="player3made">&nbsp</div>
                             </div>
                         </div>
-                        <div class="textcolor container2 textsize">
+                        <div class="textcolor container3 textsize">
                             <div class="points" id="player3ponits">&nbsp</div>
                         </div>
                     </div>
@@ -230,14 +270,14 @@
                             </div>
                         </div>
                         <div class="flexlist2" >
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="guess" id="player4guess"></div>
                             </div>
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="made" id="player4made">&nbsp</div>
                             </div>
                         </div>
-                        <div class="textcolor container2 textsize">
+                        <div class="textcolor container3 textsize">
                             <div class="points" id="player4ponits">&nbsp</div>
                         </div>
                     </div>
@@ -251,14 +291,14 @@
                             </div>
                         </div>
                         <div class="flexlist2" >
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="guess" id="player5guess"></div>
                             </div>
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="made" id="player5made">&nbsp</div>
                             </div>
                         </div>
-                        <div class="textcolor container2 textsize">
+                        <div class="textcolor container3 textsize">
                             <div class="points" id="player5ponits">&nbsp</div>
                         </div>
                     </div>
@@ -272,14 +312,14 @@
                             </div>
                         </div>
                         <div class="flexlist2" >
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="guess" id="player6guess"></div>
                             </div>
-                            <div class="textcolor container2 textsize">
+                            <div class="textcolor container3 textsize">
                                 <div class="made" id="player6made">&nbsp</div>
                             </div>
                         </div>
-                        <div class="textcolor container2 textsize">
+                        <div class="textcolor container3 textsize">
                             <div class="points" id="player6ponits">&nbsp</div>
                         </div>
                     </div>
