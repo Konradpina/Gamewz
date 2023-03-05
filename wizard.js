@@ -46,7 +46,7 @@ function startgame(){
     document.getElementById("playername5.2").innerText =document.getElementById("name5").innerText;
     document.getElementById("playername6.2").innerText =document.getElementById("name6").innerText;
     
-
+    
     document.getElementById("resultbutton").hidden=true
     if(document.getElementById("name1").innerText ===""){
         return
@@ -109,6 +109,7 @@ function startgame(){
     }
     console.log(Players)
     document.getElementById("gamemode").hidden=false
+    document.getElementById("historylist").hidden=false
     
 }
 
@@ -226,6 +227,7 @@ function points(){
     }
     
     totalpoints()
+    document.getElementById("nextround").hidden=false
 }
 
 
@@ -428,6 +430,7 @@ function result0(){
 
 
 function nextround(){
+    document.getElementById("nextround").hidden=true
     player1nextround()
     player2nextround()
     player3nextround()
