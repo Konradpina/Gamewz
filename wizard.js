@@ -128,7 +128,7 @@ function reset(){
     playerresult=[]
     document.getElementById("predictionbutton").hidden=false
     document.getElementById("resultbutton").hidden=true
-    document.getElementById("resetbutton").hidden=true
+    document.getElementById("nextround").hidden=true
 }
 
 function predictionschow(){
@@ -155,83 +155,119 @@ function resultschow(){
 function points(){
     if(playerresult[0] === playerprediction[0]){
         player1ponits.innerText=20+10*playerresult[0]
-        player1points= player1points+ 20+10*playerresult[0]
     }else if(playerresult[0]-playerprediction[0]>0){
         var wrongpoints= playerresult[0]-playerprediction[0]
         player1ponits.innerText= wrongpoints*-10
-        player1points =player1points +wrongpoints*-10
     }else{
         var wrongpoints= playerresult[0]-playerprediction[0]
         player1ponits.innerText= wrongpoints*10
-        player1points =player1points +wrongpoints*10
     }
     if(playerresult[1] === playerprediction[1]){
         player2ponits.innerText=20+10*playerresult[1]
-        player2points= player2points+ 20+10*playerresult[1]
     }else if(playerresult[1]-playerprediction[1]>0){
         var wrongpoints= playerresult[1]-playerprediction[1]
         player2ponits.innerText= wrongpoints*-10
-        player2points =player2points +wrongpoints*-10
     }else{
         var wrongpoints= playerresult[1]-playerprediction[1]
         player2ponits.innerText= wrongpoints*10
-        player2points =player2points +wrongpoints*10
     }
     if(playerresult[2] === playerprediction[2]){
         player3ponits.innerText=20+10*playerresult[2]
-        player3points= player3points+ 20+10*playerresult[2]
     }else if(playerresult[2]-playerprediction[2]>0){
         var wrongpoints= playerresult[2]-playerprediction[2]
         player3ponits.innerText= wrongpoints*-10
-        player3points =player3points +wrongpoints*-10
     }else{
         var wrongpoints= playerresult[2]-playerprediction[2]
         player3ponits.innerText= wrongpoints*10
-        player3points =player3points +wrongpoints*10
     }
     if(playerresult[3] === playerprediction[3]){
         player4ponits.innerText=20+10*playerresult[3]
-        player4points= player4points+ 20+10*playerresult[3]
     }else if(playerresult[3]-playerprediction[3]>0){
         var wrongpoints= playerresult[3]-playerprediction[3]
         player4ponits.innerText= wrongpoints*-10
-        player4points =player4points +wrongpoints*-10
     }else{
         var wrongpoints= playerresult[3]-playerprediction[3]
         player4ponits.innerText= wrongpoints*10
-        player4points =player4points +wrongpoints*10
     }
     if(playerresult[4] === playerprediction[4]){
         player5ponits.innerText=20+10*playerresult[4]
-        player5points= player5points+ 20+10*playerresult[4]
     }else if(playerresult[4]-playerprediction[4]>0){
         var wrongpoints= playerresult[4]-playerprediction[4]
         player5ponits.innerText= wrongpoints*-10
-        player5points =player5points +wrongpoints*-10
     }else{
         var wrongpoints= playerresult[4]-playerprediction[4]
         player5ponits.innerText= wrongpoints*10
-        player5points =player5points +wrongpoints*10
     }
     if(playerresult[5] === playerprediction[5]){
         player6ponits.innerText=20+10*playerresult[5]
-        player6points= player6points+ 20+10*playerresult[5]
     }else if(playerresult[5]-playerprediction[5]>0){
         var wrongpoints= playerresult[5]-playerprediction[5]
         player6ponits.innerText= wrongpoints*-10
-        player6points =player6points +wrongpoints*-10
     }else{
         var wrongpoints= playerresult[5]-playerprediction[5]
         player6ponits.innerText= wrongpoints*10
-        player6points =player6points +wrongpoints*10
     }
     
-    totalpoints()
+    
     document.getElementById("nextround").hidden=false
 }
 
 
 function totalpoints(){
+    if(playerresult[0] === playerprediction[0]){
+        player1points= player1points+ 20+10*playerresult[0]
+    }else if(playerresult[0]-playerprediction[0]>0){
+        var wrongpoints= playerresult[0]-playerprediction[0]
+        player1points =player1points +wrongpoints*-10
+    }else{
+        var wrongpoints= playerresult[0]-playerprediction[0]
+        player1points =player1points +wrongpoints*10
+    }
+    if(playerresult[1] === playerprediction[1]){
+        player2points= player2points+ 20+10*playerresult[1]
+    }else if(playerresult[1]-playerprediction[1]>0){
+        var wrongpoints= playerresult[1]-playerprediction[1]
+        player2points =player2points +wrongpoints*-10
+    }else{
+        var wrongpoints= playerresult[1]-playerprediction[1]
+        player2points =player2points +wrongpoints*10
+    }
+    if(playerresult[2] === playerprediction[2]){
+        player3points= player3points+ 20+10*playerresult[2]
+    }else if(playerresult[2]-playerprediction[2]>0){
+        var wrongpoints= playerresult[2]-playerprediction[2]
+        player3points =player3points +wrongpoints*-10
+    }else{
+        var wrongpoints= playerresult[2]-playerprediction[2]
+        player3points =player3points +wrongpoints*10
+    }
+    if(playerresult[3] === playerprediction[3]){
+        player4points= player4points+ 20+10*playerresult[3]
+    }else if(playerresult[3]-playerprediction[3]>0){
+        var wrongpoints= playerresult[3]-playerprediction[3]
+        player4points =player4points +wrongpoints*-10
+    }else{
+        var wrongpoints= playerresult[3]-playerprediction[3]
+        player4points =player4points +wrongpoints*10
+    }
+    if(playerresult[4] === playerprediction[4]){
+        player5points= player5points+ 20+10*playerresult[4]
+    }else if(playerresult[4]-playerprediction[4]>0){
+        var wrongpoints= playerresult[4]-playerprediction[4]
+        player5points =player5points +wrongpoints*-10
+    }else{
+        var wrongpoints= playerresult[4]-playerprediction[4]
+        player5points =player5points +wrongpoints*10
+    }
+    if(playerresult[5] === playerprediction[5]){
+        player6points= player6points+ 20+10*playerresult[5]
+    }else if(playerresult[5]-playerprediction[5]>0){
+        var wrongpoints= playerresult[5]-playerprediction[5]
+        player6points =player6points +wrongpoints*-10
+    }else{
+        var wrongpoints= playerresult[5]-playerprediction[5]
+        player6points =player6points +wrongpoints*10
+    }
     document.getElementById("player1totalpoints").textContent=`${player1points}p`
     document.getElementById("player2totalpoints").textContent=`${player2points}p`
     document.getElementById("player3totalpoints").textContent=`${player3points}p`
@@ -300,6 +336,7 @@ function changeresult(number){
         predictioncount=0
         resultschow()
         points()
+        document.getElementById("nextround").hidden=false
     }
 }
 
@@ -430,6 +467,9 @@ function result0(){
 
 
 function nextround(){
+    
+    totalpoints()
+    
     document.getElementById("nextround").hidden=true
     player1nextround()
     player2nextround()
