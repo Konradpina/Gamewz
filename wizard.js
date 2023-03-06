@@ -143,27 +143,70 @@ function reset(){
 }
 
 function predictionschow(){
-    player1guess.innerText =playerprediction[0]
-    player2guess.innerText =playerprediction[1]
-    player3guess.innerText =playerprediction[2]
-    player4guess.innerText =playerprediction[3]
-    player5guess.innerText =playerprediction[4]
-    player6guess.innerText =playerprediction[5]
+    if(playerprediction[0] !=undefined){
+        player1guess.innerText =playerprediction[0]
+    }
+    if(playerprediction[1] !=undefined){
+        player2guess.innerText =playerprediction[1]
+    }
+    if(playerprediction[2] !=undefined){
+        player3guess.innerText =playerprediction[2]
+    }
+    if(playerprediction[3] !=undefined){
+        player4guess.innerText =playerprediction[3]
+    }
+    if(playerprediction[4] !=undefined){
+        player5guess.innerText =playerprediction[4]
+    }
+    if(playerprediction[5] !=undefined){
+        player6guess.innerText =playerprediction[5]
+    }
+    points()
+    // player1guess.innerText =playerprediction[0]
+    // player2guess.innerText =playerprediction[1]
+    // player3guess.innerText =playerprediction[2]
+    // player4guess.innerText =playerprediction[3]
+    // player5guess.innerText =playerprediction[4]
+    // player6guess.innerText =playerprediction[5]
     document.getElementById("resultbutton").hidden=false
     
 }
 function resultschow(){
-    player1made.innerText =playerresult[0]
-    player2made.innerText =playerresult[1]
-    player3made.innerText =playerresult[2]
-    player4made.innerText =playerresult[3]
-    player5made.innerText =playerresult[4]
-    player6made.innerText =playerresult[5]
+    if(playerresult[0] !=undefined){
+        player1made.innerText =playerresult[0]
+    }
+    if(playerresult[1] !=undefined){
+        player2made.innerText =playerresult[1]
+    }
+    if(playerresult[2] !=undefined){
+        player3made.innerText =playerresult[2]
+    }
+    if(playerresult[3] !=undefined){
+        player4made.innerText =playerresult[3]
+    }
+    if(playerresult[4] !=undefined){
+        player5made.innerText =playerresult[4]
+    }
+    if(playerresult[5] !=undefined){
+        player6made.innerText =playerresult[5]
+    }
+    // player1made.innerText =playerresult[0]
+    // player2made.innerText =playerresult[1]
+    // player3made.innerText =playerresult[2]
+    // player4made.innerText =playerresult[3]
+    // player5made.innerText =playerresult[4]
+    // player6made.innerText =playerresult[5]
     document.getElementById("resultbutton").hidden=true
     
 
 }
 function points(){
+    if(playerresult[0] ===undefined ){
+       return
+    }else if(playerresult[0] ===undefined){
+        return
+    }
+    
     if(playerresult[0] === playerprediction[0]){
         player1ponits.innerText=20+10*playerresult[0]
     }else if(playerresult[0]-playerprediction[0]>0){
@@ -173,6 +216,11 @@ function points(){
         var wrongpoints= playerresult[0]-playerprediction[0]
         player1ponits.innerText= wrongpoints*10
     }
+    if(playerresult[1] ===undefined ){
+        return
+     }else if(playerresult[1] ===undefined){
+         return
+     }
     if(playerresult[1] === playerprediction[1]){
         player2ponits.innerText=20+10*playerresult[1]
     }else if(playerresult[1]-playerprediction[1]>0){
@@ -182,6 +230,11 @@ function points(){
         var wrongpoints= playerresult[1]-playerprediction[1]
         player2ponits.innerText= wrongpoints*10
     }
+    if(playerresult[2] ===undefined ){
+        return
+     }else if(playerresult[2] ===undefined){
+         return
+     }
     if(playerresult[2] === playerprediction[2]){
         player3ponits.innerText=20+10*playerresult[2]
     }else if(playerresult[2]-playerprediction[2]>0){
@@ -191,6 +244,11 @@ function points(){
         var wrongpoints= playerresult[2]-playerprediction[2]
         player3ponits.innerText= wrongpoints*10
     }
+    if(playerresult[3] ===undefined ){
+        return
+     }else if(playerresult[3] ===undefined){
+         return
+     }
     if(playerresult[3] === playerprediction[3]){
         player4ponits.innerText=20+10*playerresult[3]
     }else if(playerresult[3]-playerprediction[3]>0){
@@ -200,6 +258,11 @@ function points(){
         var wrongpoints= playerresult[3]-playerprediction[3]
         player4ponits.innerText= wrongpoints*10
     }
+    if(playerresult[4] ===undefined ){
+        return
+     }else if(playerresult[4] ===undefined){
+         return
+     }
     if(playerresult[4] === playerprediction[4]){
         player5ponits.innerText=20+10*playerresult[4]
     }else if(playerresult[4]-playerprediction[4]>0){
@@ -209,6 +272,11 @@ function points(){
         var wrongpoints= playerresult[4]-playerprediction[4]
         player5ponits.innerText= wrongpoints*10
     }
+    if(playerresult[5] ===undefined ){
+        return
+     }else if(playerresult[5] ===undefined){
+         return
+     }
     if(playerresult[5] === playerprediction[5]){
         player6ponits.innerText=20+10*playerresult[5]
     }else if(playerresult[5]-playerprediction[5]>0){
@@ -220,7 +288,7 @@ function points(){
     }
     
     
-    document.getElementById("nextround").hidden=false
+    
 }
 
 
@@ -288,12 +356,13 @@ function totalpoints(){
 }
 function prediction(){
     var playeercontainer =document.getElementsByName("playeercontainer")
-    for(i=0; i<playeercontainer.length; i++){
-        playeercontainer[i].hidden=true
-    }
+    // for(i=0; i<playeercontainer.length; i++){
+    //     playeercontainer[i].hidden=true
+    // }
     document.getElementById("predictionbutton").hidden=true
     document.getElementById("geussbox").hidden=false
-    playeercontainer[0].hidden=false
+    // playeercontainer[0].hidden=false
+    playeercontainer[0].style.backgroundColor="rgb(0, 0, 40)"
     
 }
 
@@ -302,15 +371,19 @@ function changeprediction(number){
     var playeercontainer =document.getElementsByName("playeercontainer")
     if(predictioncount != Players-1){
         playerprediction.push(number)
-        playeercontainer[predictioncount].hidden=true
-        playeercontainer[predictioncount+1].hidden=false
+        // playeercontainer[predictioncount].hidden=true
+        // playeercontainer[predictioncount+1].hidden=false
+        playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
+        playeercontainer[predictioncount+1].style.backgroundColor="rgb(0, 0, 40)"
         predictioncount++
+        predictionschow()
     }else{
         playerprediction.push(number)
         console.log("yes")
-        for(i=0; i<Players; i++){
-            playeercontainer[i].hidden=false
-        }
+        // for(i=0; i<Players; i++){
+        //     playeercontainer[i].hidden=false
+        // }
+        playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
         document.getElementById("geussbox").hidden=true
         predictioncount=0
         predictionschow()
@@ -321,12 +394,13 @@ function changeprediction(number){
 
 function result(){
     var playeercontainer =document.getElementsByName("playeercontainer")
-    for(i=0; i<playeercontainer.length; i++){
-        playeercontainer[i].hidden=true
-    }
+    // for(i=0; i<playeercontainer.length; i++){
+    //     playeercontainer[i].hidden=true
+    // }
     document.getElementById("resultbutton").hidden=true
     document.getElementById("resultbox").hidden=false
-    playeercontainer[0].hidden=false
+    // playeercontainer[0].hidden=false
+    playeercontainer[0].style.backgroundColor="rgb(40, 0, 0)"
     
 }
 
@@ -334,20 +408,27 @@ function changeresult(number){
     var playeercontainer =document.getElementsByName("playeercontainer")
     if(predictioncount != Players-1){
         playerresult.push(number)
-        playeercontainer[predictioncount].hidden=true
-        playeercontainer[predictioncount+1].hidden=false
+        // playeercontainer[predictioncount].hidden=true
+        // playeercontainer[predictioncount+1].hidden=false
+        playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
+        playeercontainer[predictioncount+1].style.backgroundColor="rgb(40, 0, 0)"
         predictioncount++
+        predictionschow()
+        points()
+        resultschow()
     }else{
         playerresult.push(number)
         console.log("yes")
-        for(i=0; i<Players; i++){
-            playeercontainer[i].hidden=false
-        }
+        // for(i=0; i<Players; i++){
+        //     playeercontainer[i].hidden=false
+        // }
         document.getElementById("resultbox").hidden=true
+        playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
         predictioncount=0
         resultschow()
         points()
         document.getElementById("nextround").hidden=false
+
     }
 }
 
