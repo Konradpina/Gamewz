@@ -10,6 +10,8 @@ var player3points=0
 var player4points=0
 var player5points=0
 var player6points=0
+var turn =1
+var playerturn=1
 
 var playernameinput = document.getElementById("playernameinput");
 playernameinput.addEventListener("keypress", function(event) {
@@ -121,7 +123,7 @@ function startgame(){
     console.log(Players)
     document.getElementById("gamemode").hidden=false
     document.getElementById("historylist").hidden=false
-    
+    playerturn=Players
 }
 
 function reset(){
@@ -140,7 +142,41 @@ function reset(){
     document.getElementById("predictionbutton").hidden=false
     document.getElementById("resultbutton").hidden=true
     document.getElementById("nextround").hidden=true
+    
 }
+function resetbutton(){
+    playerprediction=[" "," "," "," "," "," ",]
+    playerresult=[" "," "," "," "," "," ",]
+    predictionschow()
+    resultschow()
+    player1ponits.innerText =" "
+    player2ponits.innerText =" "
+    player3ponits.innerText =" "
+    player4ponits.innerText =" "
+    player5ponits.innerText =" "
+    player6ponits.innerText =" "
+    playerprediction=[]
+    playerresult=[]
+    document.getElementById("predictionbutton").hidden=false
+    document.getElementById("resultbutton").hidden=true
+    document.getElementById("nextround").hidden=true
+    
+    
+    
+        turn=turn-1
+    
+    
+    if(playerturn===turn){
+        console.log("playerturn===Players")
+        playerturn=Players
+    }else{
+        playerturn=playerturn-1
+    }
+    if(turn===0){
+        turn=Players
+    }
+}
+
 
 function predictionschow(){
     if(playerprediction[0] !=undefined){
@@ -354,6 +390,25 @@ function totalpoints(){
     document.getElementById("player5totalpoints").textContent=`${player5points}p`
     document.getElementById("player6totalpoints").textContent=`${player6points}p`
 }
+
+
+function turncount(){
+    if (turn >= Players+1){
+        turn=1
+    }
+    console.log(turn)
+}
+
+function playcount(){
+    playerturn++;
+    if (playerturn === Players+1){
+        playerturn=1
+    }
+    turn =playerturn+1
+    turncount()
+    console.log(playerturn)
+}
+
 function prediction(){
     var playeercontainer =document.getElementsByName("playeercontainer")
     // for(i=0; i<playeercontainer.length; i++){
@@ -362,35 +417,67 @@ function prediction(){
     document.getElementById("predictionbutton").hidden=true
     document.getElementById("geussbox").hidden=false
     // playeercontainer[0].hidden=false
-    playeercontainer[0].style.backgroundColor="rgb(0, 0, 40)"
+    playeercontainer[turn-1].style.backgroundColor="rgb(0, 0, 40)"
     
 }
 
-
 function changeprediction(number){
     var playeercontainer =document.getElementsByName("playeercontainer")
-    if(predictioncount != Players-1){
-        playerprediction.push(number)
+    if(turn != playerturn){
+        playerprediction[turn-1]=number
         // playeercontainer[predictioncount].hidden=true
         // playeercontainer[predictioncount+1].hidden=false
-        playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
-        playeercontainer[predictioncount+1].style.backgroundColor="rgb(0, 0, 40)"
-        predictioncount++
+        playeercontainer[turn-1].style.backgroundColor="rgb(0, 0, 0)"
+        if(Players != turn){
+            playeercontainer[turn].style.backgroundColor="rgb(0, 0, 40)"
+        }else if(Players === turn){
+            playeercontainer[turn-Players].style.backgroundColor="rgb(0, 0, 40)"
+        }
+        
+        turn++
+        turncount()
         predictionschow()
     }else{
-        playerprediction.push(number)
+        playerprediction[turn-1]=number
         console.log("yes")
         // for(i=0; i<Players; i++){
         //     playeercontainer[i].hidden=false
         // }
-        playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
+        playeercontainer[turn-1].style.backgroundColor="rgb(0, 0, 0)"
         document.getElementById("geussbox").hidden=true
         predictioncount=0
         predictionschow()
+        turncount()
+        playcount()
     }
     
 
 }
+
+// function changeprediction(number){
+//     var playeercontainer =document.getElementsByName("playeercontainer")
+//     if(predictioncount != Players-1){
+//         playerprediction.push(number)
+//         // playeercontainer[predictioncount].hidden=true
+//         // playeercontainer[predictioncount+1].hidden=false
+//         playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
+//         playeercontainer[predictioncount+1].style.backgroundColor="rgb(0, 0, 40)"
+//         predictioncount++
+//         predictionschow()
+//     }else{
+//         playerprediction.push(number)
+//         console.log("yes")
+//         // for(i=0; i<Players; i++){
+//         //     playeercontainer[i].hidden=false
+//         // }
+//         playeercontainer[predictioncount].style.backgroundColor="rgb(0, 0, 0)"
+//         document.getElementById("geussbox").hidden=true
+//         predictioncount=0
+//         predictionschow()
+//     }
+    
+
+// }
 
 function result(){
     var playeercontainer =document.getElementsByName("playeercontainer")
