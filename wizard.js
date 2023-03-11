@@ -241,7 +241,7 @@ function predictionschow(){
     // player4guess.innerText =playerprediction[3]
     // player5guess.innerText =playerprediction[4]
     // player6guess.innerText =playerprediction[5]
-    document.getElementById("resultbutton").hidden=false
+    
     
 }
 function resultschow(){
@@ -491,7 +491,7 @@ function changeprediction(number){
         turncount()
         playcount()
         impossibelprediction()
-        
+        document.getElementById("resultbutton").hidden=false
     }
     
 
@@ -560,33 +560,32 @@ function changeresult(number){
         document.getElementById("nextround").hidden=false
         Roundnumber++
         document.getElementById("reset").hidden=false
-        // guessbuttonlimit()
+         guessbuttonlimit()
     }
 }
 
 function head(){
-    Math.max(totalpoints)
     document.getElementById("headround").innerText=`Round ${Roundnumber}`
     document.getElementById("startplayer").innerText=`${Playerlist[turn-1]} begins`
-    document.getElementById("winner")
+    // document.getElementById("winner")
 }
 
 
 
-// function guessbuttonlimit(){
-//     var guessbutton= document.getElementsByClassName("guessbutton")
-//     var resultbutton= document.getElementsByClassName("resultbutton")
-//     for(i=0;i<guessbutton.length;i++){
-//         guessbutton[i].hidden=true;
-//         resultbutton[i].hidden=true;
-//     }
-//     for(i=0;i<Roundnumber+1;i++){
-//         guessbutton[i].hidden=false;
-//         resultbutton[i].hidden=false;
-//     }
+function guessbuttonlimit(){
+    var guessbutton= document.getElementsByClassName("guessbutton")
+    var resultbutton= document.getElementsByClassName("resultbutton")
+    for(i=0;i<guessbutton.length;i++){
+        guessbutton[i].hidden=true;
+        resultbutton[i].hidden=true;
+    }
+    for(i=0;i<Roundnumber+1;i++){
+        guessbutton[i].hidden=false;
+        resultbutton[i].hidden=false;
+    }
    
-// }
-// guessbuttonlimit()
+}
+guessbuttonlimit()
 function prediction0(){
     changeprediction(0)
 }
