@@ -5,6 +5,7 @@
     color: rgb(44, 138, 0);
     text-shadow: 0px 0px 15px red;
     transition: all 0.3s;
+    font-family: 'Pirata One', cursive;
 }
 .textcolor:hover{
     color: rgb(81, 255, 0);  
@@ -62,6 +63,7 @@
     text-shadow: 0px 0px 10px red;
     box-shadow:0px 0px 10px rgb(255, 0, 0);;
     transition: all 0.3s;
+    font-family: 'Pirata One', cursive;
 }
 .nameinput:hover{
     border-color: rgb(38, 120, 0);
@@ -84,6 +86,7 @@
     text-shadow: 0px 0px 10px rgb(255, 0, 0);
     box-shadow:0px 0px 8px red;
     margin-top: 40px;
+    font-family: 'Pirata One', cursive;
 }
 .startbutton:hover{
     text-shadow: 0px 0px 15px red;
@@ -104,6 +107,7 @@
     border-color: rgb(30, 92, 1);
     width: 100%;
     transition: all 0.3s;
+    font-family: 'Pirata One', cursive;
     
 }
 
@@ -141,7 +145,8 @@
     border-color: rgb(30, 92, 1);
     border-radius: 3px;
     transition: all 0.5s;
-    flex:1
+    flex:1;
+    font-family: 'Pirata One', cursive;
 }
 .wihlebutton:hover{
     color: rgb(81, 255, 0);
@@ -189,6 +194,7 @@
     color: rgb(255, 247, 0);
     text-shadow: 0px 0px 15px rgb(255, 0, 0);
     transition: all 0.3s;
+    font-family: 'Pirata One', cursive;
 }
 .headelementflex{
     flex:1;}
