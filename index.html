@@ -7,7 +7,18 @@
         <link rel="stylesheet" href="style/wizard.css">
 
     </head>
-    <body class="backgroundcolor">
+    <body class="backgroundcolor" style="padding-top: 80px;">
+        <div class="head headtext textsize">
+            <div class="headflex">
+                <div class="headelementflex"></div>
+                <div class="headelement" id="headround">Lets Play!</div>
+                <div class="headelementflex"></div>
+                <div class="headelement" id="startplayer">Pleas enter your Names:</div>
+                <div class="headelementflex"></div>
+                <!-- <div class="headelement" id="winner">nobody leads</div>
+                <div class="headelementflex"></div> -->
+            </div>
+        </div>
         <div>
             <div id="startbox" class="textcolor textsize ">
                 <div class="flexlist" id="playerdisplay2" >
@@ -177,64 +188,67 @@
             
 
             <div id="geussbox" hidden="true">
+                
                 <div class="flexlist">
+                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction0()">0</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction1()">1</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction2()">2</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction3()">3</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction4()">4</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction5()">5</button></div>
                 </div>
                <div class="flexlist">
+                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction5()">5</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction6()">6</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction7()">7</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction8()">8</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction9()">9</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction10()">10</button></div>
                </div>
                <div class="flexlist">
+                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction10()">10</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction11()">11</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction12()">12</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction13()">13</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction14()">14</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction15()">15</button></div>
                </div>
                <div class="flexlist">
+                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction15()">15</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction16()">16</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction17()">17</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction18()">18</button></div>
                     <div class="flex1"><button class="guessbutton textsize" onclick="prediction19()">19</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="prediction0()">0</button></div>
+                    
                </div>
             </div>
 
             <div id="resultbox" hidden="true">
                 <div class="flexlist">
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result1()">1</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result2()">2</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result3()">3</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result4()">4</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result5()">5</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result0()">0</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result1()">1</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result2()">2</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result3()">3</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result4()">4</button></div>
                 </div>
                <div class="flexlist">
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result6()">6</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result7()">7</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result8()">8</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result9()">9</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result10()">10</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result5()">5</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result6()">6</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result7()">7</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result8()">8</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result9()">9</button></div>
                </div>
                <div class="flexlist">
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result11()">11</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result12()">12</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result13()">13</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result14()">14</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result15()">15</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result10()">10</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result11()">11</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result12()">12</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result13()">13</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result14()">14</button></div>
                </div>
                <div class="flexlist">
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result16()">16</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result17()">17</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result18()">18</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result19()">19</button></div>
-                    <div class="flex1"><button class="guessbutton textsize" onclick="result0()">0</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result15()">15</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result16()">16</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result17()">17</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result18()">18</button></div>
+                    <div class="flex1"><button class="resultbutton textsize" onclick="result19()">19</button></div>
+                    
                </div>
             </div>
             <div class="flexlist"><button  id="nextround" hidden class="wihlebutton textsize" onclick="nextround()">Next Round</button>

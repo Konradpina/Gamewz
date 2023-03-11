@@ -3,7 +3,7 @@
 }
 .textcolor{
     color: rgb(44, 138, 0);
-    text-shadow: 0px 0px 10px red;
+    text-shadow: 0px 0px 15px red;
     transition: all 0.3s;
 }
 .textcolor:hover{
@@ -92,7 +92,7 @@
     color: rgb(81, 255, 0);
     
 }
-.guessbutton{
+.guessbutton,.resultbutton{
     flex:1;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -106,7 +106,8 @@
     transition: all 0.3s;
     
 }
-.guessbutton:hover{
+
+.guessbutton,.resultbutton:hover{
     color: rgb(81, 255, 0);
     
 }
@@ -169,4 +170,36 @@
 
     display: flex;
     align-items: center;
+}
+
+.head{
+    background-color: rgb(0, 0, 0);
+    margin-left: 0px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(8, 0, 255);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    
+}
+.headtext{
+    color: rgb(255, 247, 0);
+    text-shadow: 0px 0px 15px rgb(255, 0, 0);
+    transition: all 0.3s;
+}
+.headelementflex{
+    flex:1;}
+.headelement{
+    padding-top:8px ;
+    padding-bottom:8px ;
+    
+    flex-shrink: 0;
+}
+.headflex{
+    display: flex;
+    flex-direction: row;
+    
 }
