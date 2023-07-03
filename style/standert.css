@@ -1,0 +1,160 @@
+:root{
+    --fcolor:rgb(174, 0, 0);
+    --scolor:rgb(14, 163, 0);
+    --tcolor:rgb(255, 242, 0);
+    --bcolor: rgb(0, 0, 255);
+    --sside:10vw;
+    --sheight:10vh;
+    --bimg:url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+
+    --nbcolor:rgb(0, 30, 255);
+}
+body{
+  
+    height: 500vh;
+    background-image: var(--bimg) ;
+    color: var(--fcolor);
+    text-shadow: 0px 0px 10px var(--scolor);
+    overflow-x: hidden;
+    font-size: 3vh;
+    font-family: 'Pirata One', cursive;
+    }
+
+    .goout{
+        animation: goout 3s forwards ;
+    }
+    .goin{
+        animation: goin 3s forwards ;
+    }
+    .goout2{
+        animation: goout2 3s forwards ;
+    }
+    .goin2{
+        animation: goin2 3s forwards ;
+    }
+    
+    .gamebox{
+        position: absolute;
+        
+        background-position: bottom;
+        top:-110vh;
+        height: 92vh;
+        left:0;
+        right: 0vw;
+        animation: startgame 3s forwards;
+    }
+    
+    @keyframes goout {
+        0%{
+            left:  var(--sside);
+            right: var(--sside);
+        }
+        100%{
+            left:-110vw;
+            right:110vw
+        }
+        
+        
+    }
+    @keyframes goin {
+        
+        0%{
+            left:110vw;
+            right:-110vw
+        }
+        100%{
+            left:  var(--sside);
+            right: var(--sside);
+        }
+        
+    }
+
+    @keyframes goout2 {
+        0%{
+            left:  0;
+            right: 0;
+        }
+        100%{
+            left:-110vw;
+            right:110vw
+        }
+        
+        
+    }
+    @keyframes goin2 {
+        
+        0%{
+            left:110vw;
+            right:-110vw
+        }
+        100%{
+            left:  0;
+            right: 0;
+        }
+        
+    }
+    @keyframes startgame {
+        0%{
+            top:-110vh;
+        }
+        100%{
+            top:8vh;
+        }
+    }
+    @keyframes startgame2 {
+       0%{
+        left: 100vw;
+        right: -100vw;
+       }
+       100%{
+        left: 0vw;
+        right: 0vw;
+       }
+    }
+    @keyframes startgame3 {
+        0%{
+        left: -100vw;
+        right: 100vw;
+       }
+       100%{
+        left: 0vw;
+        right: 0vw;
+       }
+    }
+    @keyframes erase {
+        0%{
+        transform: rotate(0);
+       }
+       50%{
+        /* transform: rotate(25deg); */
+       }
+       100%{
+        transform: rotate(360deg);
+       }
+    }
+    .erase{
+        animation: erase 1s forwards;
+    }
+    
+    .infobar{
+        background-image: var(--bimg);
+        height: 5vh;
+        position: fixed;
+        top:0;
+        left: 100vw;
+        right: -100vw;
+        border: yellow 3px solid;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        align-items: center;
+
+        animation: startgame2 3s  forwards;
+    }
+    /* .ifbi{
+        flex:1;
+    } */
+    .startgame3{
+        animation: startgame3 3s 2.5s forwards;
+    }

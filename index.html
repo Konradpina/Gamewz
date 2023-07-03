@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>MagicGame</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Pirata+One&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" href="style/standert.css">
+        <link rel="stylesheet" href="style/beginning.css">
+        <link rel="stylesheet" href="style/aktivebox.css">
+        <link rel="stylesheet" href="style/btns.css">
+        <style>
+
+            
+            .allpointsbox{
+                position: absolute;
+                top: 100vh;
+                right: 0;
+                left: 0;
+                background-color: antiquewhite;
+                min-height: 10vh;
+                
+            }
+            .namebap{
+                display: flex;
+               
+                flex:1;
+            }
+            .namebap div{
+                flex:1;
+                border: rebeccapurple 2px solid;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .displaybtn{
+                padding-top:10vh ;
+                position: absolute;
+                left: 0;
+                right: 0;
+                display: flex;
+                justify-content: center;
+            }
+            .roundap{
+                border: rebeccapurple 2px solid;
+                padding: 1vw;
+            }
+           
+           .btnbg{
+            text-align: center;
+            
+           } 
+        </style>
+    </head>
+    <body id="body">
+        <!-- startbox -->
+        <div class="startbox" id="startbox"  >
+            
+                <div class="headline">Welcome to Wizwas</div>
+                <div class="startbtn">
+                    <div><button onclick="startnames()">Start</button></div>
+                    <div><button>Continue game</button></div>
+                    <div><button>tutorial</button></div>
+                    <div><button>tutorial</button></div>
+                </div>
+        </div>
+
+        <!-- namebox -->
+        <div class="namebox" id="namebox" >
+            <div class="nameb"       ><div>Player1:</div><Input onkeydown="enter()" class="namei"></Input></div>
+            <div class="nameb"><div>Player2:</div><Input  hidden onkeydown="enter()" class="namei"></Input></div>
+            <div class="nameb"><div>Player3:</div><Input  hidden onkeydown="enter()" class="namei"></Input></div>
+            <div class="nameb"><div>Player4:</div><Input  hidden onkeydown="enter()" class="namei"></Input></div>
+            <div class="nameb"><div>Player5:</div><Input  hidden onkeydown="enter()" class="namei"></Input></div>
+            <div class="nameb"><div>Player6:</div><Input  hidden onkeydown="enter()" class="namei"></Input></div>
+            
+            <div class="displaybtn"><button onclick="startbutton()" class="btnbg">beginn</button></div>
+        </div>
+
+
+        
+
+        <!-- gamebox -->
+        <div class="gamebox" id="gamebox" hidden >
+            
+           
+
+
+            <!-- Namedisplay -->
+            <div class="aktivegamebox" >
+                <div class="playerbox" hidden>
+                    <div class="ndisplaybox"><div class="Name"></div>
+                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
+                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div>
+                </div>
+                <div class="playerbox" hidden>
+                    <div class="ndisplaybox"><div class="Name"></div>
+                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
+                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div>
+                </div>
+                <div class="playerbox" hidden>
+                    <div class="ndisplaybox"><div class="Name"></div>
+                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
+                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div>
+                </div>
+                <div class="playerbox" hidden>
+                    <div class="ndisplaybox"><div class="Name"></div>
+                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
+                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div>
+                </div>
+                <div class="playerbox" hidden>
+                    <div class="ndisplaybox"><div class="Name"></div>
+                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
+                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div>
+                </div>
+                <div class="playerbox" hidden>
+                    <div class="ndisplaybox"><div class="Name"></div>
+                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
+                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div>
+                </div>
+                
+                
+            </div>
+
+
+            <!-- buttons -->
+            <div class="btnsbox startgame3" id="btnbox">
+                <button class="nbtn" onclick="resetreslts()">Reset results</button>
+                <button class="nbtn" onclick="resetround()">Reset Round</button>
+                <button class="nrbtn" onclick="startnextround()">Start next Round</button>
+            </div>
+
+            <!-- Keyboard -->
+            <div id="Keyboard" class="Keyborad">
+                <button class="btnk" onclick="num(0)" hidden>0</button>
+                <button class="btnk" onclick="num(1)" hidden>1</button>
+                <button class="btnk" onclick="num(2)" hidden>2</button>
+                <button class="btnk" onclick="num(3)" hidden>3</button>
+                <button class="btnk" onclick="num(4)" hidden>4</button>
+                <button class="btnk" onclick="num(5)" hidden>5</button>
+                <button class="btnk" onclick="num(6)" hidden>6</button>
+                <button class="btnk" onclick="num(7)" hidden>7</button>
+                <button class="btnk" onclick="num(8)" hidden>8</button>
+                <button class="btnk" onclick="num(9)" hidden>9</button>
+                <button class="btnk" onclick="num(10)" hidden>10</button>
+                <button class="btnk" onclick="num(11)" hidden>11</button>
+                <button class="btnk" onclick="num(12)" hidden>12</button>
+                <button class="btnk" onclick="num(13)" hidden>13</button>
+                <button class="btnk" onclick="num(14)" hidden>14</button>
+                <button class="btnk" onclick="num(15)" hidden>15</button>
+                <button class="btnk" onclick="num(16)" hidden>16</button>
+                <button class="btnk" onclick="num(17)" hidden>17</button>
+                <button class="btnk" onclick="num(18)" hidden>18</button>
+                <button class="btnk" onclick="num(19)" hidden>19</button>
+                <button class="btnk" onclick="num(20)" hidden>20</button>
+              
+            </div>
+           
+
+         <!-- infobar -->
+         <div class="infobar" id="infobar"hidden  >
+            <div id="bginningplayer"></div>
+            <div id="leadingplayer">Konrad Leads</div>
+            <div id="roundnumber"></div>
+            
+         </div>
+        </div>
+         
+        
+        <!-- allthepoints -->
+         <!-- <div class="allpointsbox"id="allpointsbox">
+            <div class="displayflex" hidden>
+                <div class="roundap">Round01</div>
+                <div class="namebap">
+                    <div class="nameap" hidden>Tim</div>
+                    <div class="nameap" hidden>Tim</div>
+                    <div class="nameap" hidden></div>
+                    <div class="nameap" hidden></div>
+                    <div class="nameap" hidden></div>
+                    <div class="nameap" hidden></div>
+                </div>
+            </div>
+            
+        </div> -->
+
+        </div>
+         
+        
+    </body>
+    <script src="script.js"></script>
+</html>

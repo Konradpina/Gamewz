@@ -1,0 +1,56 @@
+.stichbox{
+                
+    display: flex;
+    justify-content: space-around;
+}
+.aktivegamebox{
+    
+    display: flex;
+ 
+}
+.flex1,.playerbox,.c,.d{
+    flex:1;
+}
+.ndisplaybox{
+    
+    display: flex;
+    justify-content: space-between; 
+}
+.playerbox{
+    background-image: url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+    object-fit:scale-down;
+    /* background-color: rgba(0, 0, 0, 0.692); */
+    box-shadow:var(--nbcolor) 0px 0px 10px;
+    border: var(--nbcolor) 1px solid;
+
+    margin: 0.5vh;
+    transition: all 0.3s;
+}
+.activeplayer{
+    box-shadow:var(--fcolor) 0px 0px 30px;
+    transition: all 0.3s;
+}
+.activeplayer2{
+    box-shadow:var(--scolor) 0px 0px 30px;
+    transition: all 0.3s;
+}
+
+.points1,.name,.prd,.made,.reslt{
+    border: var(--nbcolor) 1px solid;
+    
+}
+
+.prd,.made,.reslt{
+    flex:1;
+    text-align: center;
+}
+.points1{
+display: flex;
+padding-left: 1vw;
+padding-right: 1vw;
+}
+.name{
+    padding-left: 1vw;
+    flex:1;
+   
+}

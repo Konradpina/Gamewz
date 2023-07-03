@@ -1,0 +1,81 @@
+.startbox, .namebox,.gamebox{
+    background-image: var(--bimg) ;
+}
+.startbox, .namebox{
+   
+    
+    position: absolute;
+    top: var(--sheight);
+    bottom:  var(--sheight);
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px var(--scolor);
+    
+    
+}
+.startbox{
+    left: var(--sside);
+    right: var(--sside);
+}
+.namebox{
+    padding: 5vh;
+    font-size: 5vh;
+    left: 110vw;
+    right: -110vw;
+    /* left: var(--sside);
+    right: var(--sside); */
+}
+.namebox input{
+    font-family: 'Pirata One', cursive;
+    text-shadow: 0px 0px 10px var(--scolor);
+    background:transparent;
+    border:transparent ;
+    color: var(--fcolor);
+    height: 6vh;
+    outline: none;
+    display: inline;
+    font-size: 5vh;
+    
+}
+.namebox div{
+    margin:0 ;
+    display: flex;
+    align-items: center;
+}
+
+.headline{
+    
+    height: 40vh;
+    display: flex;
+    font-size: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+.startbtn{
+    height: 40vh;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    
+}
+.startbtn div{
+    margin-bottom: 5vh;
+    text-align: center;
+}
+.startbtn div button,.btnbg{
+    font-size: 3vh;
+    height: 5vh;
+    font-family: 'Pirata One', cursive;
+    background-color: rgba(0, 0, 0, 0.616);
+    color: var(--fcolor);
+    text-shadow: 0px 0px 10px var(--scolor);
+    border: var(--fcolor) 2px solid;
+    border-radius: 2px;
+    width: 30vw;
+    transition: all 0.3s;
+}
+.startbtn div button:hover,.btnbg:hover{
+    width: 35vw;
+    cursor: pointer;
+    
+}

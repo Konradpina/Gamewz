@@ -1,0 +1,68 @@
+
+.btnsbox{
+                
+    display:flex;
+    position: absolute;
+    top: 40vh;
+    left: -100vw;
+    right: 100vw;
+   
+    
+}
+.btnsbox button{
+    background-image: var(--bimg);
+    margin:1vh;
+    color: var(--fcolor);
+    text-shadow: 0px 0px 10px var(--scolor);
+    font-size: 3vh;
+    min-height: 5vh;
+    border: 1px var(--bcolor) solid;
+    box-shadow: 0px 0px 10px var(--scolor);
+    transition: all 0.3s;
+    
+
+}
+.btnsbox button:hover,.Keyborad button:hover{
+    
+    box-shadow: 0px 0px 30px var(--fcolor);
+   
+}
+.nbtn{
+flex:1;
+}
+.nrbtn{
+flex:3;
+}
+
+
+.Keyborad{
+    position: absolute;
+    top: 30vh;
+    left:110vw;
+    right:-110vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.btnk{
+    background-image: var(--bimg);
+    margin:1vh;
+    color: var(--fcolor);
+    text-shadow: 0px 0px 10px var(--scolor);
+    font-size: 3vh;
+    height: 5vh;
+    border: 1px var(--bcolor) solid;
+    box-shadow: 0px 0px 10px var(--scolor);
+    transition: all 0.3s;
+}
+.nonumber{
+    text-shadow: 0px 0px 10px var(--fcolor); 
+    box-shadow: 0px 0px 30px var(--fcolor);
+    border: 2.5vh var(--fcolor) solid;
+    font-size: 0vh;
+
+}
+.btnk2{
+    border: 1px var(--scolor) solid;
+    text-shadow: 0px 0px 10px var(--scolor);
+    box-shadow: 0px 0px 10px var(--bcolor);
+}
