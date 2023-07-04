@@ -1,0 +1,90 @@
+.playercontain{
+    
+   
+    /* background-color: rgba(0, 0, 0, 0.692); */
+    
+    
+    transition: all 0.3s;
+    flex:1;
+   
+    
+}
+
+
+.allpointsbox{
+    border: var(--nbcolor) 1px solid;
+    box-shadow:var(--nbcolor) 0px 0px 10px;
+    position: absolute;
+    top: 100vh;
+    right: 1vw;
+    left: 1vw;
+    /* background-color: antiquewhite; */
+    min-height: 10vh;
+    margin-top: 1vh;
+}
+
+    
+    
+
+/* .namebap div{
+    flex:1;
+    border: rebeccapurple 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.ndisplayboxap{
+    
+    display: flex;
+    justify-content: space-between; 
+}
+.points1ap{
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    display: flex;
+    padding-left: 1vw;
+    padding-right: 1vw;
+ }
+.gridap{
+    display: grid;
+    flex:1
+}
+.gridap2{
+    grid-template-columns: 1fr 1fr;
+}
+.gridap3{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.gridap4{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.gridap5{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.gridap6{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.points1ap,.roundap{
+    box-shadow:var(--nbcolor) 0px 0px 10px;
+    border: var(--nbcolor) 1px solid;
+    height: 10vh;
+    padding: 0.5vh;
+}
+
+.stichboxap{
+    height: 5.5vh;
+    display: flex;
+    justify-content: space-around;
+}
+.stichboxap div{
+    border: var(--nbcolor)  0.1vh solid;
+    box-shadow:var(--nbcolor) 0px 0px 10px;
+    flex:1;
+}
+.resltap{
+    height: 5.5vh;
+    border: var(--nbcolor) 0.1vh solid;
+    box-shadow:var(--nbcolor) 0px 0px 10px;
+
+}

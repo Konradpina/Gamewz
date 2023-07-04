@@ -1,5 +1,16 @@
+.aab{
+    background-image: var(--bimg);
+}
+.aktiveaktivebox{
+    animation: erase 2.5s 0s forwards;  
+    animation-delay: calc(var(--oder)*0.2s);   
+}
+.aktiveaktivebox2{
+    animation: erase2 2.5s 0s forwards;  
+    animation-delay: calc(var(--oder)*0.2s);   
+}
 .stichbox{
-                
+         
     display: flex;
     justify-content: space-around;
 }
@@ -17,22 +28,30 @@
     justify-content: space-between; 
 }
 .playerbox{
-    background-image: url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+    background-image: var(--bimg);
     object-fit:scale-down;
     /* background-color: rgba(0, 0, 0, 0.692); */
     box-shadow:var(--nbcolor) 0px 0px 10px;
     border: var(--nbcolor) 1px solid;
-
+    
     margin: 0.5vh;
     transition: all 0.3s;
+    animation-delay: calc(var(--oder)*0.5s);
+    
 }
+
 .activeplayer{
     box-shadow:var(--fcolor) 0px 0px 30px;
+    border: var(--fcolor) solid 1px ;
     transition: all 0.3s;
+    color: var(--tcolor);
+    text-shadow: red 0 0 10px;
 }
 .activeplayer2{
     box-shadow:var(--scolor) 0px 0px 30px;
     transition: all 0.3s;
+    color: var(--tcolor);
+    text-shadow: red 0 0 10px;
 }
 
 .points1,.name,.prd,.made,.reslt{

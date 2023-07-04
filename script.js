@@ -84,30 +84,50 @@ function start(){
     document.getElementById("namebox").classList.remove("goin")
     document.getElementById("namebox").classList.add("goout")
 
+    detarmngrid()
+    document.getElementById("body").classList.add("body2")
     displaynames()
     document.getElementById("gamebox").hidden=false
     document.getElementById("infobar").hidden=false
     infobaraktive()
 }
-
+function detarmngrid(){
+    grid=document.getElementById("gridap")
+    var names=getnamearray()
+    if(names.length==2){
+        grid.classList.add("gridap2")
+    }else if(names.length==3){
+        grid.classList.add("gridap3")
+    }else if(names.length==4){
+        grid.classList.add("gridap4")
+    }else if(names.length==5){
+        grid.classList.add("gridap5")
+    }else if(names.length==6){
+        grid.classList.add("gridap6")
+    }
+}
 function displaynames(){
     var fields = document.getElementsByClassName("playerbox")
     var nfields =document.getElementsByClassName("Name")
-    // var nfieldsap=document.getElementsByClassName("nameap")
+    var nfieldsap=document.getElementsByClassName("nameap")
+    var fieldsap = document.getElementsByClassName("playercontain")
+    
     
     var names=getnamearray()
     for(i=0;i<names.length;i++){
-        // nfieldsap[i].innerHTML=names[i]
+        nfieldsap[i].innerHTML=names[i]
         nfields[i].innerHTML=names[i]
         fields[i].hidden=false
-        // nfieldsap[i].hidden=true
+        fieldsap[i].hidden=false
     }
+
+    document.getElementById("allpointsbox").hidden=false
 }
 
 function infobaraktive(){
     document.getElementById("bginningplayer").innerHTML=`${getnamearray()[bplayer]} beginns`
     document.getElementById("roundnumber").innerHTML=`Round ${roundn} `
-
+    document.getElementById("leadplayer").innerHTML=findethelead()
 }
 
 function bginninglayer(){
@@ -122,10 +142,18 @@ function startnextround(){
     if(firstround){
         beginnprediction()
         firstround=false
+        var playerboxs=document.getElementsByClassName("playerbox")
+        var playernames=getnamearray()
+        
+        for(i=0;i<playernames.length;i++){
+            playerboxs[i].classList.remove("startgame4")
+           
+        }
         return
     }
     roundn++
     addpoints()
+    addroundap()
     clearall()
     bginninglayer()
     player= bplayer
@@ -262,9 +290,42 @@ function addpoints(){
     var playernames=getnamearray()
     var reslt=document.getElementsByClassName("reslt")
     var points=document.getElementsByClassName("points")
-    for(i=0;i<playernames.length;i++){
-        points[i].innerHTML=Number(points[i].innerHTML)+Number(reslt[i].innerHTML)
+    var pointsap=document.getElementsByClassName("pointsap")
+    document.getElementById("leadplayer").classList.add("changeinfobar")
+    const myTimeout4= setTimeout(pointschange1, 1000);
+    function pointschange1() {
+        for(i=0;i<playernames.length;i++){
+            
+    
+            points[i].classList.add("pointsref")
+            pointsap[i].classList.add("pointsref")
+            
+        }
     }
+    const myTimeout6= setTimeout(pointschange3, 1200);
+    function pointschange3() {
+        for(i=0;i<playernames.length;i++){
+            points[i].innerHTML=Number(points[i].innerHTML)+Number(reslt[i].innerHTML)
+            pointsap[i].innerHTML=points[i].innerHTML   
+    
+           
+        }
+        infobaraktive()
+       
+    }
+    
+    
+    const myTimeout5= setTimeout(pointschange2, 3000);
+    function pointschange2() {
+        for(i=0;i<playernames.length;i++){
+             
+    
+            points[i].classList.remove("pointsref")
+            pointsap[i].classList.remove("pointsref")
+        }
+        document.getElementById("leadplayer").classList.remove("changeinfobar")
+      }
+    
 }
 
 function resetround(){
@@ -275,20 +336,29 @@ function resetround(){
 function clearall(){
     var pred=document.getElementsByClassName("prd")
     var made=document.getElementsByClassName("made")
-    var playerboxs=document.getElementsByClassName("playerbox")
+   
     var reslt=document.getElementsByClassName("reslt")
     var playernames=getnamearray()
-    
+    var aab=document.getElementsByClassName("aab");
+    var points=document.getElementsByClassName("points")
+
     for(i=0;i<playernames.length;i++){
+        
+        aab[i].classList.add("aktiveaktivebox")
+    }
+    const myTimeout2 = setTimeout(eraseerase2, 1400);
+    function eraseerase2() {
+        for(i=0;i<playernames.length;i++){
         pred[i].innerHTML="&nbsp"
         made[i].innerHTML="&nbsp"
         reslt[i].innerHTML="&nbsp"
-        playerboxs[i].classList.add("erase")
-    }
-    const myTimeout = setTimeout(eraseerase, 2000);
+        }
+      }
+    const myTimeout = setTimeout(eraseerase, 4000);
     function eraseerase() {
         for(i=0;i<playernames.length;i++){
-            playerboxs[i].classList.remove("erase")
+            points[i].classList.remove("pointsref")
+            aab[i].classList.remove("aktiveaktivebox")
         }
       }
     
@@ -300,19 +370,85 @@ function resetreslts(){
     document.getElementById("btnbox").classList.add("goout2")
     document.getElementById("Keyboard").classList.add("goin2")
 
-   
+    var aab=document.getElementsByClassName("aab");
+    var reslt=document.getElementsByClassName("reslt")
     var made=document.getElementsByClassName("made")
-    var playerboxs=document.getElementsByClassName("playerbox")
     var playernames=getnamearray()
+   
     
     for(i=0;i<playernames.length;i++){
-        made[i].innerHTML="&nbsp"
-        playerboxs[i].classList.add("erase")
+        
+        aab[i].classList.add("aktiveaktivebox2")
     }
-    const myTimeout = setTimeout(eraseerase, 2000);
-    function eraseerase() {
+    
+    const myTimeout3 = setTimeout(eraseerase3, 1400);
+    function eraseerase3() {
         for(i=0;i<playernames.length;i++){
-            playerboxs[i].classList.remove("erase")
+            
+        made[i].innerHTML="&nbsp"
+        reslt[i].innerHTML="&nbsp"
         }
       }
+    const myTimeout = setTimeout(eraseerase, 4000);
+    function eraseerase() {
+        for(i=0;i<playernames.length;i++){
+            aab[i].classList.remove("aktiveaktivebox2")
+        }
+      }
+}
+
+function addroundap(){
+    var playernames=getnamearray()
+    var made=document.getElementsByClassName("made")
+    var prd=document.getElementsByClassName("prd")
+    var reslt=document.getElementsByClassName("reslt")
+    var resltap=document.getElementsByClassName("resltap")
+
+    var madeap=document.getElementsByClassName("madeap")
+    var prdap=document.getElementsByClassName("prdap")
+    var pointbox=document.getElementsByClassName("pointbox")
+    var a=0
+    for(i=0;a<playernames.length;i++){
+        if(madeap[i].innerHTML==""&&prdap[i].innerHTML==""&&resltap[i].innerHTML==""){
+            madeap[i].innerHTML=made[a].innerHTML
+            prdap[i].innerHTML=prd[a].innerHTML
+            resltap[i].innerHTML=reslt[a].innerHTML
+            pointbox[i].hidden=false
+            a++
+        }
+    }
+    var b=0
+    for(i=0;b=1;i++){
+        if(document.getElementsByClassName("roundap")[i].hidden==true){
+            document.getElementsByClassName("roundap")[i].hidden=false;
+            b=1
+            return
+        }
+    }
+}
+
+function findethelead(){
+    var players=getnamearray()
+    var points=document.getElementsByClassName("points")
+    var pointsn=[]
+    var leaders=[]
+    for(i=0;i<players.length;i++){
+        pointsn.push(Number(points[i].innerHTML))
+    }
+    var hpoint=Math.max(...pointsn)
+    for(i=0;i<players.length;i++){
+        if(hpoint===pointsn[i]){
+            leaders.push(i)
+        }
+    }
+    if(leaders.length==1){
+        msg=`${players[leaders[0]]} leads`
+        return msg
+    }else if(leaders.length==2){
+        msg=`${players[leaders[0]]} and ${players[leaders[1]]} lead`
+        return msg
+    }else{
+        msg=``
+        return msg
+    }
 }

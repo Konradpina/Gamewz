@@ -9,30 +9,10 @@
         <link rel="stylesheet" href="style/beginning.css">
         <link rel="stylesheet" href="style/aktivebox.css">
         <link rel="stylesheet" href="style/btns.css">
+        <link rel="stylesheet" href="style/allthepoints.css">
         <style>
 
             
-            .allpointsbox{
-                position: absolute;
-                top: 100vh;
-                right: 0;
-                left: 0;
-                background-color: antiquewhite;
-                min-height: 10vh;
-                
-            }
-            .namebap{
-                display: flex;
-               
-                flex:1;
-            }
-            .namebap div{
-                flex:1;
-                border: rebeccapurple 2px solid;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
             .displaybtn{
                 padding-top:10vh ;
                 position: absolute;
@@ -41,15 +21,16 @@
                 display: flex;
                 justify-content: center;
             }
-            .roundap{
-                border: rebeccapurple 2px solid;
-                padding: 1vw;
-            }
+            
            
            .btnbg{
             text-align: center;
             
            } 
+
+           .displayflex{
+            display: flex;
+           }
         </style>
     </head>
     <body id="body">
@@ -88,43 +69,42 @@
 
             <!-- Namedisplay -->
             <div class="aktivegamebox" >
-                <div class="playerbox" hidden>
+                <div class="playerbox startgame4" style="--oder:0" hidden>
                     <div class="ndisplaybox"><div class="Name"></div>
-                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
-                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
-                    <div class="reslt">&nbsp</div>
+                    <div class="points1"><div class="points" style="--oder:0">0</div><div>p</div></div></div>
+                    <div class="aab" style="--oder:0"> <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div></div>  
                 </div>
-                <div class="playerbox" hidden>
+                <div class="playerbox startgame4" style="--oder:1" hidden>
                     <div class="ndisplaybox"><div class="Name"></div>
-                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
-                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
-                    <div class="reslt">&nbsp</div>
+                    <div class="points1"><div class="points" style="--oder:1">0</div><div>p</div></div></div>
+                    <div class="aab" style="--oder:1"> <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div></div>  
                 </div>
-                <div class="playerbox" hidden>
+                <div class="playerbox startgame4" style="--oder:2" hidden>
                     <div class="ndisplaybox"><div class="Name"></div>
-                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
-                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
-                    <div class="reslt">&nbsp</div>
+                    <div class="points1"><div class="points" style="--oder:2">0</div><div>p</div></div></div>
+                    <div class="aab" style="--oder:2"> <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div></div>  
                 </div>
-                <div class="playerbox" hidden>
+                <div class="playerbox startgame4" style="--oder:3" hidden>
                     <div class="ndisplaybox"><div class="Name"></div>
-                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
-                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
-                    <div class="reslt">&nbsp</div>
+                    <div class="points1"><div class="points" style="--oder:3">0</div><div>p</div></div></div>
+                    <div class="aab" style="--oder:3"> <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div></div>  
                 </div>
-                <div class="playerbox" hidden>
+                <div class="playerbox startgame4" style="--oder:4" hidden>
                     <div class="ndisplaybox"><div class="Name"></div>
-                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
-                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
-                    <div class="reslt">&nbsp</div>
+                    <div class="points1"><div class="points" style="--oder:4">0</div><div>p</div></div></div>
+                    <div class="aab" style="--oder:4"> <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div></div>  
                 </div>
-                <div class="playerbox" hidden>
+                <div class="playerbox startgame4" style="--oder:5" hidden>
                     <div class="ndisplaybox"><div class="Name"></div>
-                    <div class="points1"><div class="points">0</div><div>p</div></div></div>
-                    <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
-                    <div class="reslt">&nbsp</div>
+                    <div class="points1"><div class="points" style="--oder:5">0</div><div>p</div></div></div>
+                    <div class="aab" style="--oder:5"> <div class="stichbox"><div class="prd">&nbsp</div><div class="made">&nbsp</div></div>
+                    <div class="reslt">&nbsp</div></div>  
                 </div>
-                
                 
             </div>
 
@@ -138,27 +118,27 @@
 
             <!-- Keyboard -->
             <div id="Keyboard" class="Keyborad">
-                <button class="btnk" onclick="num(0)" hidden>0</button>
-                <button class="btnk" onclick="num(1)" hidden>1</button>
-                <button class="btnk" onclick="num(2)" hidden>2</button>
-                <button class="btnk" onclick="num(3)" hidden>3</button>
-                <button class="btnk" onclick="num(4)" hidden>4</button>
-                <button class="btnk" onclick="num(5)" hidden>5</button>
-                <button class="btnk" onclick="num(6)" hidden>6</button>
-                <button class="btnk" onclick="num(7)" hidden>7</button>
-                <button class="btnk" onclick="num(8)" hidden>8</button>
-                <button class="btnk" onclick="num(9)" hidden>9</button>
-                <button class="btnk" onclick="num(10)" hidden>10</button>
-                <button class="btnk" onclick="num(11)" hidden>11</button>
-                <button class="btnk" onclick="num(12)" hidden>12</button>
-                <button class="btnk" onclick="num(13)" hidden>13</button>
-                <button class="btnk" onclick="num(14)" hidden>14</button>
-                <button class="btnk" onclick="num(15)" hidden>15</button>
-                <button class="btnk" onclick="num(16)" hidden>16</button>
-                <button class="btnk" onclick="num(17)" hidden>17</button>
-                <button class="btnk" onclick="num(18)" hidden>18</button>
-                <button class="btnk" onclick="num(19)" hidden>19</button>
-                <button class="btnk" onclick="num(20)" hidden>20</button>
+                <button class="btnk" style="--oder:1" onclick="num(0)" hidden>0</button>
+                <button class="btnk" style="--oder:2" onclick="num(1)" hidden>1</button>
+                <button class="btnk" style="--oder:3" onclick="num(2)" hidden>2</button>
+                <button class="btnk" style="--oder:4" onclick="num(3)" hidden>3</button>
+                <button class="btnk" style="--oder:5" onclick="num(4)" hidden>4</button>
+                <button class="btnk" style="--oder:6" onclick="num(5)" hidden>5</button>
+                <button class="btnk" style="--oder:7" onclick="num(6)" hidden>6</button>
+                <button class="btnk" style="--oder:8" onclick="num(7)" hidden>7</button>
+                <button class="btnk" style="--oder:9" onclick="num(8)" hidden>8</button>
+                <button class="btnk" style="--oder:10" onclick="num(9)" hidden>9</button>
+                <button class="btnk" style="--oder:11" onclick="num(10)" hidden>10</button>
+                <button class="btnk" style="--oder:12" onclick="num(11)" hidden>11</button>
+                <button class="btnk" style="--oder:13" onclick="num(12)" hidden>12</button>
+                <button class="btnk" style="--oder:14" onclick="num(13)" hidden>13</button>
+                <button class="btnk" style="--oder:15" onclick="num(14)" hidden>14</button>
+                <button class="btnk" style="--oder:16" onclick="num(15)" hidden>15</button>
+                <button class="btnk" style="--oder:17" onclick="num(16)" hidden>16</button>
+                <button class="btnk" style="--oder:18" onclick="num(17)" hidden>17</button>
+                <button class="btnk" style="--oder:19" onclick="num(18)" hidden>18</button>
+                <button class="btnk" style="--oder:20" onclick="num(19)" hidden>19</button>
+                <button class="btnk" style="--oder:21" onclick="num(20)" hidden>20</button>
               
             </div>
            
@@ -166,7 +146,7 @@
          <!-- infobar -->
          <div class="infobar" id="infobar"hidden  >
             <div id="bginningplayer"></div>
-            <div id="leadingplayer">Konrad Leads</div>
+            <div id="leadplayer"></div>
             <div id="roundnumber"></div>
             
          </div>
@@ -174,22 +154,351 @@
          
         
         <!-- allthepoints -->
-         <!-- <div class="allpointsbox"id="allpointsbox">
-            <div class="displayflex" hidden>
-                <div class="roundap">Round01</div>
-                <div class="namebap">
-                    <div class="nameap" hidden>Tim</div>
-                    <div class="nameap" hidden>Tim</div>
-                    <div class="nameap" hidden></div>
-                    <div class="nameap" hidden></div>
-                    <div class="nameap" hidden></div>
-                    <div class="nameap" hidden></div>
+         <div class="allpointsbox"id="allpointsbox" hidden >
+            
+            <div class="displayflex">
+                <div class="rounddisplayap">
+                    <div class="roundap">Round Nr</div>
+                    <div class="roundap" hidden>Round 1</div>
+                    <div class="roundap" hidden>Round 2</div>
+                    <div class="roundap" hidden>Round 3</div>
+                    <div class="roundap" hidden>Round 4</div>
+                    <div class="roundap" hidden>Round 5</div>
+                    <div class="roundap" hidden>Round 6</div>
+                    <div class="roundap" hidden>Round 7</div>
+                    <div class="roundap" hidden>Round 8</div>
+                    <div class="roundap" hidden>Round 9</div>
+                    <div class="roundap" hidden>Round &nbsp 10</div>
+                    <div class="roundap" hidden>Round &nbsp 11</div>
+                    <div class="roundap" hidden>Round &nbsp 12</div>
+                    <div class="roundap" hidden>Round &nbsp 13</div>
+                    <div class="roundap" hidden>Round &nbsp 14</div>
+                    <div class="roundap" hidden>Round &nbsp 15</div>
+                    <div class="roundap" hidden>Round &nbsp 16</div>
+                    <div class="roundap" hidden>Round &nbsp 17</div>
+                    <div class="roundap" hidden>Round &nbsp 18</div>
+                    <div class="roundap" hidden>Round &nbsp 19</div>
+                    <div class="roundap" hidden>Round &nbsp 20</div>
                 </div>
+                <div class="flex1">
+                    <div class="displayflex" id="namesap" >
+                        <div class="playercontain" >
+                            <div class="ndisplayboxap"><div class="Nameap"></div>
+                            <div class="points1ap"><div class="pointsap">0</div><div>p</div></div></div>
+                        </div>
+                        <div class="playercontain">
+                            <div class="ndisplayboxap"><div class="Nameap"></div>
+                            <div class="points1ap"><div class="pointsap">0</div><div>p</div></div></div>
+                        </div>
+                        <div class="playercontain"hidden >
+                            <div class="ndisplayboxap"><div class="Nameap"></div>
+                            <div class="points1ap"><div class="pointsap">0</div><div>p</div></div></div>
+                        </div>
+                        <div class="playercontain"hidden>
+                            <div class="ndisplayboxap"><div class="Nameap"></div>
+                            <div class="points1ap"><div class="pointsap">0</div><div>p</div></div></div>
+                        </div>
+                        <div class="playercontain"hidden >
+                            <div class="ndisplayboxap"><div class="Nameap"></div>
+                            <div class="points1ap"><div class="pointsap">0</div><div>p</div></div></div>
+                        </div>
+                        <div class="playercontain"hidden>
+                            <div class="ndisplayboxap"><div class="Nameap"></div>
+                            <div class="points1ap"><div class="pointsap">0</div><div>p</div></div></div>
+                        </div>
+                    </div>
+                    <div class="gridap" id="gridap">
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        <div class="pointbox" hidden >
+                            <div class="stichboxap"><div class="prdap"></div><div class="madeap"></div></div>
+                            <div class="resltap"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+               
             </div>
             
-        </div> -->
-
+            
         </div>
+
+      
+        
          
         
     </body>
