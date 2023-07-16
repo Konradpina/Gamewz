@@ -148,7 +148,7 @@ function bginninglayer(){
     return 
 }
 function startnextround(){
-    
+    document.getElementById("music1").hidden=true
     if(firstround){
         beginnprediction()
         firstround=false
@@ -262,6 +262,7 @@ function endmade(){
     document.getElementById("Keyboard").classList.remove("goin2")
     document.getElementById("Keyboard").classList.add("goout2")
     document.getElementById("btnbox").classList.add("goin2")
+    document.getElementById("music1").hidden=false
     nonumber=0
     if(madetoal!=roundn){
         alert("there's something wrong this round")
