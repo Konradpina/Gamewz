@@ -1,13 +1,15 @@
-.aab{
-    background-image: var(--bimg);
-}
+/* .aab{
+    
+} */
 .aktiveaktivebox{
     animation: erase 2.5s 0s forwards;  
-    animation-delay: calc(var(--oder)*0.2s);   
+    animation-delay: calc(var(--oder)*0.2s);  
+   
 }
 .aktiveaktivebox2{
     animation: erase2 2.5s 0s forwards;  
     animation-delay: calc(var(--oder)*0.2s);   
+    
 }
 .stichbox{
          
@@ -33,9 +35,9 @@
     /* background-color: rgba(0, 0, 0, 0.692); */
     box-shadow:var(--nbcolor) 0px 0px 10px;
     border: var(--nbcolor) 1px solid;
-    
+    box-shadow: inset rgb(10, 0, 83) 0px 0px 0vw 0px;
     margin: 0.5vh;
-    transition: all 0.3s;
+    transition: all 0.5s;
     animation-delay: calc(var(--oder)*0.5s);
     
 }
@@ -43,15 +45,22 @@
 .activeplayer{
     box-shadow:var(--fcolor) 0px 0px 30px;
     border: var(--fcolor) solid 1px ;
-    transition: all 0.3s;
+    transition: all 1s;
     color: var(--tcolor);
     text-shadow: red 0 0 10px;
+    background-color: black;
+    box-shadow: inset rgb(10, 0, 83) 0px 0px 10vw 30px;
 }
 .activeplayer2{
     box-shadow:var(--scolor) 0px 0px 30px;
-    transition: all 0.3s;
+    transition: all 0.5s;
     color: var(--tcolor);
     text-shadow: red 0 0 10px;
+    background-color: black;
+    box-shadow: inset rgb(83, 0, 0) 0px 0px 10vw 30px;
+
+
+
 }
 
 .points1,.name,.prd,.made,.reslt{

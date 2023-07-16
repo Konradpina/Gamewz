@@ -11,6 +11,15 @@ var bplayer=0
 var player=0
 var countp=0
 var madetoal=0
+var laedingp=""
+
+var totaltime=0
+var roundtime=0
+
+
+var news=["Press Start next Round","pleas start","dont you want to play?","i dont have all day","are you serious"]
+var newsv=true
+var newsc=0
 
 function startnames(){
     document.getElementById("startbox").classList.add("goout")
@@ -29,6 +38,7 @@ function startbutton(){
     }
     start()
 }
+
 
 addEventListener("keydown",(event) => nameip())
 
@@ -144,7 +154,7 @@ function startnextround(){
         firstround=false
         var playerboxs=document.getElementsByClassName("playerbox")
         var playernames=getnamearray()
-        
+        ttimeround = setInterval(timeround, 1000)    
         for(i=0;i<playernames.length;i++){
             playerboxs[i].classList.remove("startgame4")
            
@@ -160,11 +170,13 @@ function startnextround(){
 
     infobaraktive()
     beginnprediction()
-   
+    roundtime=0
 
 }
 function beginnprediction(){
     showbtns()
+    document.getElementById("anbox").classList.remove("anboxin")
+    document.getElementById("anbox").classList.add("anboxout")
     document.getElementById("btnbox").classList.remove("startgame3")
     document.getElementById("btnbox").classList.remove("goin2")
     document.getElementById("btnbox").classList.add("goout2")
@@ -176,7 +188,13 @@ function beginnprediction(){
                 keys[i].classList.remove("btnk2")
             }
 
-    document.getElementsByClassName("playerbox")[player].classList.add("activeplayer")
+
+    const timeoutbeginning=setTimeout(startstartan, 2000); 
+    function startstartan(){
+        document.getElementsByClassName("playerbox")[player].classList.add("activeplayer")
+    }
+    
+    
 
 }
 
@@ -239,6 +257,7 @@ function num(number){
 }
 
 function endmade(){
+    var stabdp=laedingp
     document.getElementById("btnbox").classList.remove("goout2")
     document.getElementById("Keyboard").classList.remove("goin2")
     document.getElementById("Keyboard").classList.add("goout2")
@@ -248,7 +267,17 @@ function endmade(){
         alert("there's something wrong this round")
     }
     madetoal=0
-    
+
+    var stabdp=laedingp
+    laedingp=findethelead()
+    if(laedingp!=stabdp){
+
+    }
+    calculatepoints()
+    newnews() 
+    document.getElementById("anbox").classList.remove("anboxout")
+    document.getElementById("anbox").classList.add("anboxin")
+   
 }
 
 function calculatepoints(){
@@ -328,7 +357,7 @@ function addpoints(){
     
 }
 
-function resetround(){
+function resetround(){    
     firstround=true
     clearall()
     startnextround()
@@ -430,10 +459,15 @@ function addroundap(){
 function findethelead(){
     var players=getnamearray()
     var points=document.getElementsByClassName("points")
+    var reslt=document.getElementsByClassName("reslt")
     var pointsn=[]
     var leaders=[]
     for(i=0;i<players.length;i++){
-        pointsn.push(Number(points[i].innerHTML))
+        if(reslt[i].innerHTML=="&nbsp;"){
+            pointsn.push(Number(points[i].innerHTML))
+        }else{
+            pointsn.push(Number(points[i].innerHTML)+Number(reslt[i].innerHTML))
+        }
     }
     var hpoint=Math.max(...pointsn)
     for(i=0;i<players.length;i++){
@@ -451,4 +485,118 @@ function findethelead(){
         msg=``
         return msg
     }
+}
+
+function newnews(){
+    news=[];
+    var newslp= findethelead()
+   
+    news.push(`Next round will be ${roundn+1}`)
+
+    news.push(`you play ${sectotime(totaltime)}`)
+    if(newslp!=""){
+        news.push(newslp)
+    }
+    news.push(`time per set${sectotime(roundtime/roundn)}`)
+
+    document.getElementById("news1").innerText=news[0]
+    document.getElementById("news2").innerText=news[1]
+    newsc=2
+   
+}
+
+timenews =setInterval(repnews, 5000)  
+
+
+function repnews(){
+    
+    if(newsv){
+        document.getElementById("news2").innerText=news[newsc]
+        newsc++
+        newsv=false
+    }else{
+        document.getElementById("news1").innerText=news[newsc]
+        newsc++
+        newsv=true
+    }
+    if(newsc==news.length){
+        newsc=0
+    }
+    return
+}
+
+function timeround(){
+    totaltime++
+    roundtime++
+}
+
+function sectotime(sec){
+    var sec= Math.floor(sec)
+    var min=0
+    var seconds=0
+    var houers=0
+    var days=0
+    if(isNaN(sec)){
+        return
+    }else{
+        for(i=0;i==0;){
+        
+            if(sec>=86400){
+                sec= sec-86400
+                days++
+            }else if(sec>=3600){
+                sec= sec-3600
+                houers++
+            }else if(sec>=60){
+                    sec=sec-60
+                    min++
+            }else if(sec>=1){
+                sec=sec-1
+                seconds++
+                
+            }else if(sec===0){
+                var msg=""
+                if(days!=0){
+                    if(days==1){
+                        msg=msg+` ${days} Day`
+                    }else{
+                        msg=msg+` ${days} Days`
+                    }
+                    
+                }
+                if(houers!=0){
+                    if(houers==1){
+                        msg=msg+` ${houers} Houer`
+                    }else{
+                        msg=msg+` ${houers} Houers`
+                    }
+                    
+                }
+                if(min!=0){
+                    if(min==1){
+                        msg=msg+` ${min} Minute`
+                    }else{
+                        msg=msg+` ${min} Minutes`
+                    }
+                }
+                if(seconds!=0&&min==0&&houers==0){
+                    if(seconds==1){
+                        msg=msg+` ${seconds} Second`
+                    }else{
+                        msg=msg+` ${seconds} Seconds`
+                    }
+                }else if(seconds!=0){
+                    if(seconds==1){
+                        msg=msg+` and ${seconds} Second`
+                    }else{
+                        msg=msg+` and ${seconds} Seconds`
+                    }
+                }
+                return msg
+            }
+        }
+    }
+    
+    
+    
 }

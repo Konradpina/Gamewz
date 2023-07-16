@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="style/aktivebox.css">
         <link rel="stylesheet" href="style/btns.css">
         <link rel="stylesheet" href="style/allthepoints.css">
+        <link rel="stylesheet" href="style/news.css">
         <style>
 
             
@@ -108,13 +109,19 @@
                 
             </div>
 
+            <!-- announcements-->
+            <div class="anbox" id="anbox" hidden>
+                <div class="anbox1" id="news1">Konrad Leads</div>
+                <div class="anbox2" id="news2">Konrad beginns</div>
+            </div>
 
             <!-- buttons -->
             <div class="btnsbox startgame3" id="btnbox">
-                <button class="nbtn" onclick="resetreslts()">Reset results</button>
-                <button class="nbtn" onclick="resetround()">Reset Round</button>
-                <button class="nrbtn" onclick="startnextround()">Start next Round</button>
+                <button class="nbtn btnb" onclick="resetreslts()">Reset results</button>
+                <button class="nbtn btnb" onclick="resetround()">Reset Round</button>
+                <button class="nrbtn btnb" onclick="startnextround()">Start next Round</button>
             </div>
+
 
             <!-- Keyboard -->
             <div id="Keyboard" class="Keyborad">
@@ -499,8 +506,7 @@
 
       
         
-         
-        
+       
     </body>
     <script src="script.js"></script>
 </html>

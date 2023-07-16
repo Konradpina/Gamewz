@@ -1,0 +1,34 @@
+.anbox{
+    position: absolute;
+    background-color: rgba(227, 227, 227, 0.173);
+    border-top: var(--tcolor) 0.2vh solid;
+    border-bottom: var(--tcolor) 0.2vh solid;
+
+    display: flex;
+    width: 200vw;
+    left: 0;
+    right: 0;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+    margin-top: 3vh;
+    text-align: center;
+}
+.anbox1{
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100vw;
+
+    text-align: center;
+    animation: news1 10s  infinite;
+}
+.anbox2{
+    position: relative;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+
+
+    align-items: center;
+    animation: news2 10s  infinite ;
+}
