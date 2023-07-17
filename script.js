@@ -21,6 +21,8 @@ var news=["Press Start next Round","pleas start","dont you want to play?","i don
 var newsv=true
 var newsc=0
 
+fadein("music3",10)
+
 function startnames(){
     document.getElementById("startbox").classList.add("goout")
     document.getElementById("namebox").classList.add("goin")
@@ -154,13 +156,17 @@ function startnextround(){
         firstround=false
         var playerboxs=document.getElementsByClassName("playerbox")
         var playernames=getnamearray()
-        ttimeround = setInterval(timeround, 1000)    
+        ttimeround = setInterval(timeround, 1000) 
+        fadeout("music3", 10)  
+        fadein("music2", 10) 
         for(i=0;i<playernames.length;i++){
             playerboxs[i].classList.remove("startgame4")
            
         }
         return
     }
+    fadeout("music1", 10)
+    fadein("music2",10)
     roundn++
     addpoints()
     addroundap()
@@ -277,7 +283,9 @@ function endmade(){
     newnews() 
     document.getElementById("anbox").classList.remove("anboxout")
     document.getElementById("anbox").classList.add("anboxin")
-   
+    
+    fadeout("music3",10)
+    fadein("music1",10)
 }
 
 function calculatepoints(){
@@ -307,6 +315,8 @@ function showbtns(){
 }
 
 function startmade(){
+    fadeout("music2",10)
+    fadein("music3",40)
     document.getElementsByClassName("playerbox")[player].classList.add("activeplayer2")
     var keys=document.getElementsByClassName("btnk")
             for(i=0;i<keys.length;i++){
@@ -493,7 +503,7 @@ function newnews(){
    
     news.push(`Next round will be ${roundn+1}`)
 
-    news.push(`you play ${sectotime(totaltime)}`)
+    news.push(`you played ${sectotime(totaltime)}`)
     if(newslp!=""){
         news.push(newslp)
     }
@@ -600,3 +610,43 @@ function sectotime(sec){
     
     
 }
+
+function fadein(name, time){
+    v=0
+    var audio=document.getElementById(name)
+    audio.volume=0
+    document.getElementById(name).play()
+    fadetin=setInterval(fadetimein, time)
+    function fadetimein(){
+        if(v==100){
+            console.log("done")
+            window.clearInterval(fadetin)
+        }else{
+            v++
+            
+            audio.volume=v/100
+
+        }
+    }
+}
+
+function fadeout(name,time){
+    b=0
+    var audio=document.getElementById(name)
+    if(audio.volume!=100){
+        window.clearInterval(fadetin) 
+    }
+    fadetout=setInterval(fadetimeout, time)
+    function fadetimeout(){
+        if(b==100){
+            console.log("done")
+            window.clearInterval(fadetout)
+            audio.pause()
+        }else{
+            b++
+            audio.volume=(100-b)/100
+
+        }
+    }
+}
+
