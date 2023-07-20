@@ -40,6 +40,12 @@ body{
 .goin2{
     animation: goin2 3s forwards ;
 }
+.goout3{
+    animation: goout3 3s forwards ;
+}
+.goin3{
+    animation: goin3 3s forwards ;
+}
 
 
 
@@ -58,11 +64,14 @@ body{
         0%{
             left:  var(--sside);
             right: var(--sside);
+            box-shadow: 0px 0px 40px var(--scolor);
         }
         50%{
             transform: rotate(5deg);
+            box-shadow: 0px 0px 100px var(--bcolor);
         }
         100%{
+            box-shadow: 0px 0px 40px var(--scolor);
             left:-110vw;
             right:110vw
         }
@@ -73,12 +82,15 @@ body{
         
         0%{
             left:110vw;
-            right:-110vw
+            right:-110vw;
+            box-shadow: 0px 0px 40px var(--scolor);
         }
         50%{
+            box-shadow: 0px 0px 100px var(--bcolor);
             transform: rotate(5deg);
         }
         100%{
+            box-shadow: 0px 0px 40px var(--scolor);
             left:  var(--sside);
             right: var(--sside);
         }
@@ -90,10 +102,35 @@ body{
             left:  0;
             right: 0;
         }
-        
         100%{
             left:-110vw;
             right:110vw
+        }
+        
+        
+    }
+    @keyframes goin3 {
+        
+        0%{
+            left:-110vw;
+            right:110vw
+        }
+        
+        100%{
+            left:  0;
+            right: 0;
+        }
+        
+    }
+    @keyframes goout3 {
+        0%{
+            left:  0;
+            right: 0;
+        }
+        
+        100%{
+            left:110vw;
+            right:-110vw
         }
         
         
@@ -175,9 +212,9 @@ body{
         0%{
         transform:  rotate(0);
         }
-        /* 50%{
-        transform: rotateY(180deg);
-        } */
+        50%{
+        box-shadow: 0 0 30px var(--tcolor);
+        }
         100%{
         transform: rotate(360deg);
         color: var(--tcolor);
@@ -284,6 +321,7 @@ body{
         }
        
     }
+    
 
     .changeinfobar{
         animation: changeinfobar  3s forwards;

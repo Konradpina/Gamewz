@@ -503,16 +503,22 @@
                 </div>
                
             </div>
+        
             
-            
+    
+           
+        
         </div>
-
-        <!-- <div id="musicbox" class="musicbox">
-            <div><button class="silent">Prediction</button></div>
-            <div><button>Results</button></div>
-            <div><button>Standby</button></div>
-        </div> -->
-
+        <div id="musicbox" class="musicbox">
+            <div class="musiccd"> <div> Standby (Now)  </div><input type="range"  onchange="changemusic(1,value)" max="100" min="00" value="100"></div>
+            <div class="musiccd"> <div> Prediction </div><input type="range"onchange="changemusic(2,value)" max="100" min="00" value="70"></div>
+            <div class="musiccd"> <div> Game  </div><input type="range"  onchange="changemusic(3,value)" max="100" min="00" value="50" step="1"></div>
+            <div class="musicdone" onclick="musicout()">Done</div>
+        </div>
+        <div id="musicmenue" class="musicmenue">
+            <button onclick="musicin()">music</button>
+        </div>
+       
         <audio class="music1" id="music1" src="./music/kingdom-of-fantasy-version-60s-10817.mp3" loop></audio>
         <audio class="music1" id="music2" src="./music/dark-outro-loopable-true-crime-mystery-music-136588.mp3" loop></audio>
         <audio class="music1" id="music3" src="./music/island-of-the-lost-dark-fantasy-background-music-110368.mp3" loop></audio>

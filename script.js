@@ -107,6 +107,7 @@ function start() {
     document.getElementById("gamebox").hidden = false
     document.getElementById("infobar").hidden = false
     infobaraktive()
+    document.getElementById("musicmenue").classList.add("goin2")
 }
 function detarmngrid() {
     grid = document.getElementById("gridap")
@@ -155,7 +156,9 @@ function bginninglayer() {
     return
 }
 function startnextround() {
-
+    document.getElementById("musicmenue").classList.remove("goin3")
+    document.getElementById("musicmenue").classList.remove("goin2")
+    document.getElementById("musicmenue").classList.add("goout3")
     if (firstround) {
         beginnprediction()
         firstround = false
@@ -182,7 +185,7 @@ function startnextround() {
     infobaraktive()
     beginnprediction()
     roundtime = 0
-
+    
 }
 function beginnprediction() {
     showbtns()
@@ -269,6 +272,8 @@ function num(number) {
 
 function endmade() {
     var stabdp = laedingp
+    document.getElementById("musicmenue").classList.remove("goout3")
+    document.getElementById("musicmenue").classList.add("goin2")
     document.getElementById("btnbox").classList.remove("goout2")
     document.getElementById("Keyboard").classList.remove("goin2")
     document.getElementById("Keyboard").classList.add("goout2")
@@ -656,3 +661,31 @@ function fadeout(name, time, volumex) {
     }
 }
 
+function changemusic(nr,value){
+    if(nr==1){
+        
+        volume1=value;
+        document.getElementById("music1").volume=value/100
+    }else if(nr==2){
+        volume2=value;
+    }else if(nr==3){
+        volume3=value;
+    }
+}
+
+function musicin(){
+    document.getElementById("musicbox").classList.remove("goout3")
+    document.getElementById("musicmenue").classList.remove("goin3")
+    document.getElementById("musicmenue").classList.remove("goin2")
+    document.getElementById("musicmenue").classList.add("goout2")
+    document.getElementById("musicbox").classList.remove("goout2")
+    document.getElementById("musicbox").classList.add("goin2")
+    
+}
+
+function musicout(){
+    document.getElementById("musicmenue").classList.remove("goout2")
+    document.getElementById("musicmenue").classList.add("goin3")
+    document.getElementById("musicbox").classList.remove("goin2")
+    document.getElementById("musicbox").classList.add("goout3")
+}
