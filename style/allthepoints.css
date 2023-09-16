@@ -34,7 +34,7 @@
     justify-content: center;
 } */
 .ndisplayboxap{
-    
+    background-color: transparent;
     display: flex;
     justify-content: space-between; 
 }

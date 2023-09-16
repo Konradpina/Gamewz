@@ -47,7 +47,32 @@ body{
     animation: goin3 3s forwards ;
 }
 
-
+.klead{
+    animation: kleads1 18s forwards ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kleadtext{
+    color: transparent;
+    text-shadow: 0 0 0 ;
+    font-size: 0;
+    /* height: 90%;
+    width: 90%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+   
+}
+.kleadtexta{
+    animation: keleads2 18s forwards;
+}
 
 .gamebox{
     position: absolute;
@@ -60,6 +85,136 @@ body{
     animation: startgame 3s forwards;
 }
 
+.newsrefresh{
+  animation: newsrefrescha 1s forwards;
+}
+
+    @keyframes newsrefrescha {
+        0%{
+            transform:rotate3d(0,0,0,0deg);;
+        }
+
+        /* 50%{
+            transform: rotate(180deg);
+        } */
+
+        100%{
+            transform:rotate3d(0,1,0,360deg);
+        }
+    }
+
+    @keyframes kleads1 {
+        0%{
+            background-color:transparent;
+        }
+        4%{
+            background-color: black;
+        }
+        90%{
+            background-color: black;
+        }
+        100%{
+            background-color:transparent
+        }
+        
+    }
+    @keyframes keleads2 {
+        0%{
+            transform:rotate3d(10,1,5,300deg);
+            color: rgba(240, 248, 255, 0);
+        }
+        14%{
+            color: rgba(240, 248, 255, 0);
+            
+        }
+        15%{
+            color: var(--tcolor);
+            font-size: 2vh;
+            
+            
+        }
+        20%{
+
+
+        }
+        30%{
+            
+            font-size: 15vh;
+
+         
+            
+        }
+        38%{
+            color: var(--tcolor);
+        }
+        39%{
+            color: var(--fcolor);
+           
+        }
+        40%{
+            transform:rotate3d(0,0,0,0deg);
+        }
+        43%{
+            text-shadow: 0 0 0 transparent;
+            color: var(--fcolor);
+        }
+        44%{
+            text-shadow: -4vh -4vh 4px var(--scolor);
+            color:var(--fcolor);
+            /* text-shadow: -4vh -4vh 1vh var(--fcolor); */
+        }
+        49%{
+            text-shadow: -4vh -4vh 4px var(--scolor);
+            color:var(--fcolor);
+        }
+        50%{
+            text-shadow: 0vh 0vh 1vh var(--scolor);
+            color:var(--fcolor);
+            /* color: var(--tcolor); */
+            transform:rotate3d(0,0,0,0deg);
+            font-size: 15vh; 
+        }
+        59%{
+            text-shadow: 0vh 0vh 1vh var(--scolor);
+            color:var(--fcolor); 
+        }
+        60%{
+            text-shadow: 0vh 0vh 4vh var(--scolor);
+            color:var(--fcolor); 
+        }
+        69%{
+           
+           
+            color:var(--fcolor);
+/* 
+            text-shadow: -4vh -4vh 0vh var(--fcolor); */
+        }
+        70%{
+            color: var(--tcolor);
+            
+            
+        }
+        80%{
+            transform:rotate3d(0,0,0,0deg);
+            font-size: 15vh;
+            color: var(--tcolor);
+        }
+        86%{
+            color: var(--tcolor);
+            font-size: 15vh;
+        }
+        89%{
+           font-size: 4px;
+            color: transparent;
+        }
+        /* 90%{
+            color: var(--tcolor);
+        } */
+        100%{
+            color: rgba(240, 248, 255, 0);
+             transform:rotate3d(10,-1,-3,220deg);
+        }
+    }
     @keyframes goout {
         0%{
             left:  var(--sside);
@@ -188,13 +343,21 @@ body{
     }
     @keyframes erase {
         0%{
-            transform: translateY(0);
+            background-color: black;
+            transform: translateY(0vh);
        }
        50%{
+       
         transform: translateY(-30vh);
+        background-color: rgb(0, 0, 0);
+       
+       }
+       95%{
+        transform: translateY(0);
+        background-color: black;
        }
        100%{
-        transform: translateY(0);
+        background-color: rgba(0, 0, 0, 0.446);
        }
     }
     @keyframes erase2 {
@@ -255,72 +418,6 @@ body{
             opacity: 1;
         }
     }
-    @keyframes news1 {
-        0%{
-            opacity: 1;
-            transform: translatex(-100vw);
-        }
-        10%{
-           transform:translatex(0vw);
-         
-        }
-        50%{
-           transform:translatex(0vw);
-         
-        }
-        60%{
-            opacity: 1;
-            transform: translatex(100vw);
-          
-        }
-        75%{
-            transform: translatex(100vw);
-            opacity: 0;
-
-        }
-        100%{
-            transform: translatex(-100vw);
-            opacity: 0;
-
-        }
-    }
-    @keyframes news2 {
-        0%{
-            transform:translatex(-100vw)
-          
-        }
-        10%{
-            opacity: 1;
-            transform: translatex(-200vw);
-        }
-        11%{
-            transform: translatex(-200vw);
-            opacity: 0;
-
-        }
-        12%{
-            transform: translatex(100vw);
-            opacity: 0;
-
-        }
-        30%{
-            transform: translatex(100vw);
-            opacity: 0;
-
-        }
-        50%{
-            opacity: 1;
-            transform: translatex(100vw);
-        }
-        60%{
-           transform:translatex(-100vw)
-        }
-        100%{
-            transform:translatex(-100vw)
-          
-        }
-       
-    }
     
 
     .changeinfobar{
@@ -335,6 +432,7 @@ body{
     
     .infobar{
         background-image: var(--bimg);
+        background-color: black;
         height: 7vh;
         position: fixed;
         top:0;
@@ -364,3 +462,4 @@ body{
     .anboxin{
         animation: anboxin 1s forwards;
     }
+    

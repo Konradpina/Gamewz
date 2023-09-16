@@ -11,6 +11,7 @@
 }
 .btnsbox button{
     background-image: var(--bimg);
+    background-color: black;
     margin:1vh;
     color: var(--fcolor);
     text-shadow: 0px 0px 10px var(--scolor);
@@ -29,12 +30,13 @@
    
 }
 .nbtn{
+font-family: 'Pirata One', cursive;
 flex:1;
 }
 .nrbtn{
+font-family: 'Pirata One', cursive;
 flex:3;
 }
-
 
 .Keyborad{
 
@@ -48,6 +50,8 @@ flex:3;
 .btnk{
     background-image: var(--bimg);
     margin:1vh;
+    background-color: black;
+    font-family: 'Pirata One', cursive;
     color: var(--fcolor);
     text-shadow: 0px 0px 10px var(--scolor);
     font-size: 5vh;
@@ -62,6 +66,7 @@ flex:3;
     box-shadow: 0px 0px 30px var(--fcolor);
     border: 3vh var(--fcolor) solid;
     font-size: 0vh;
+
 
 }
 .btnk2{

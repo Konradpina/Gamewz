@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="style/btns.css">
         <link rel="stylesheet" href="style/allthepoints.css">
         <link rel="stylesheet" href="style/news.css">
+        <link rel="stylesheet" href="style/">
         <style>
 
             
@@ -42,11 +43,14 @@
                 <div class="headline">Welcome to Wizwas</div>
                 <div class="startbtn">
                     <div><button onclick="startnames()">Start</button></div>
-                    <div><button>Continue game</button></div>
+                    <div><button onclick="startnamesklead()">Wizwas version k</button></div>
                     <div><button>tutorial</button></div>
-                    <div><button>tutorial</button></div>
+                    <div><button class="musicon">Music</button></div>
                 </div>
         </div>
+
+
+      
 
         <!-- namebox -->
         <div class="namebox" id="namebox" >
@@ -110,11 +114,7 @@
                 
             </div>
 
-            <!-- announcements-->
-            <div class="anbox" id="anbox" hidden>
-                <div class="anbox1" id="news1"></div>
-                <div class="anbox2" id="news2"></div>
-            </div>
+            
 
             <!-- buttons -->
             <div class="btnsbox startgame3" id="btnbox">
@@ -155,7 +155,8 @@
          <!-- infobar -->
          <div class="infobar" id="infobar"hidden  >
             <div id="bginningplayer"></div>
-            <div id="leadplayer"></div>
+            <div hidden="true" id="leadplayer"></div>
+            <div id="news1"></div>
             <div id="roundnumber"></div>
             
          </div>
@@ -517,12 +518,18 @@
         </div>
         <div id="musicmenue" class="musicmenue">
             <button onclick="musicin()">music</button>
+
+        </div>
+          <!-- klead -->
+          <div class="" id="klead">
+            <div class="kleadtext" id="kleadtext">Konrad leads</div>
+            <audio id="kleadaudio"  src="./music/superhero-theme-7963.mp3"></audio>  
+       
         </div>
        
         <audio class="music1" id="music1" src="./music/kingdom-of-fantasy-version-60s-10817.mp3" loop></audio>
         <audio class="music1" id="music2" src="./music/dark-outro-loopable-true-crime-mystery-music-136588.mp3" loop></audio>
         <audio class="music1" id="music3" src="./music/island-of-the-lost-dark-fantasy-background-music-110368.mp3" loop></audio>
-       
     </body>
     <script src="script.js"></script>
 </html>

@@ -1,6 +1,7 @@
-/* .aab{
+.aab{
+    background-image: var(--bimg);
     
-} */
+}
 .aktiveaktivebox{
     animation: erase 2.5s 0s forwards;  
     animation-delay: calc(var(--oder)*0.2s);  
@@ -25,6 +26,7 @@
     flex:1;
 }
 .ndisplaybox{
+    background-image: var(--bimg);
     
     display: flex;
     justify-content: space-between; 
@@ -39,17 +41,19 @@
     margin: 0.5vh;
     transition: all 0.5s;
     animation-delay: calc(var(--oder)*0.5s);
+    transition: all 0.3s;
+    box-shadow:var(--fcolor) 0px 0px 0px;
     
 }
 
 .activeplayer{
-    box-shadow:var(--fcolor) 0px 0px 30px;
-    border: var(--fcolor) solid 1px ;
+    box-shadow:rgb(21, 0, 255) 0px 0px 30px;
+   
     transition: all 1s;
     color: var(--tcolor);
     text-shadow: red 0 0 10px;
     background-color: black;
-    box-shadow: inset rgb(10, 0, 83) 0px 0px 10vw 30px;
+    transition: all 0.3s;
 }
 .activeplayer2{
     box-shadow:var(--scolor) 0px 0px 30px;
@@ -57,7 +61,7 @@
     color: var(--tcolor);
     text-shadow: red 0 0 10px;
     background-color: black;
-    box-shadow: inset rgb(83, 0, 0) 0px 0px 10vw 30px;
+    box-shadow:var(--fcolor) 0px 0px 30px;
 
 
 

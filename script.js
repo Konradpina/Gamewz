@@ -3,6 +3,7 @@ var namenumber = 0
 var predictioninput = false
 var madeinput = false
 var firstround = true
+var kleadoption= false
 
 
 var nonumber = 0
@@ -26,6 +27,10 @@ var newsv = true
 var newsc = 0
 
 
+function startnamesklead(){
+    kleadoption=true
+    startnames()
+}
 
 function startnames() {
     fadein("music3", 50, 100)
@@ -173,8 +178,9 @@ function startnextround() {
         }
         return
     }
+    newnews()
+    leadtonews()
     fadeout("music1", 10,volume1)
-    fadein("music2", 10,volume2)
     roundn++
     addpoints()
     addroundap()
@@ -189,8 +195,6 @@ function startnextround() {
 }
 function beginnprediction() {
     showbtns()
-    document.getElementById("anbox").classList.remove("anboxin")
-    document.getElementById("anbox").classList.add("anboxout")
     document.getElementById("btnbox").classList.remove("startgame3")
     document.getElementById("btnbox").classList.remove("goin2")
     document.getElementById("btnbox").classList.add("goout2")
@@ -252,6 +256,7 @@ function num(number) {
         if (player > getnamearray().length - 1) {
             player = 0
         }
+         
         var playerboxs = document.getElementsByClassName("playerbox")
         for (i = 0; i < playerboxs.length; i++) {
             document.getElementsByClassName("playerbox")[i].classList.remove("activeplayer2")
@@ -290,9 +295,6 @@ function endmade() {
 
     }
     calculatepoints()
-    newnews()
-    document.getElementById("anbox").classList.remove("anboxout")
-    document.getElementById("anbox").classList.add("anboxin")
 
     fadeout("music3", 10,volume3)
     fadein("music1", 1,volume1)
@@ -325,6 +327,7 @@ function showbtns() {
 }
 
 function startmade() {
+    newstolead()
     fadeout("music2", 10,volume2)
     fadein("music3", 40,volume3)
     document.getElementsByClassName("playerbox")[player].classList.add("activeplayer2")
@@ -380,7 +383,7 @@ function addpoints() {
 function resetround() {
     firstround = true
     clearall()
-    startnextround()
+    nextround()
 }
 function clearall() {
     var pred = document.getElementsByClassName("prd")
@@ -410,7 +413,7 @@ function clearall() {
             aab[i].classList.remove("aktiveaktivebox")
         }
     }
-
+    
 }
 
 function resetreslts() {
@@ -495,6 +498,11 @@ function findethelead() {
             leaders.push(i)
         }
     }
+    if (leaders.length == 1 && players[leaders[0]]=="Konrad"){
+        kleadf()
+    }else if(predictioninput){
+        fadein("music2", 10,volume2)
+    }
     if (leaders.length == 1) {
         msg = `${players[leaders[0]]} leads`
         return msg
@@ -507,50 +515,88 @@ function findethelead() {
     }
 }
 
-function newnews() {
-    news = [];
-    var newslp = findethelead()
 
-    news.push(`Next round will be Nr.${roundn + 1}`)
-
-    news.push(`you played ${sectotime(totaltime)}`)
-    if (newslp != "") {
-        news.push(newslp)
-    }
-    news.push(`time per set${sectotime(roundtime / roundn)}`)
-
-    document.getElementById("news1").innerText = news[0]
-    document.getElementById("news2").innerText = news[1]
-    newsc = 2
-
-}
-
-timenews = setInterval(repnews, 5000)
-
-
-function repnews() {
-
-    if (newsv) {
-        document.getElementById("news2").innerText = news[newsc]
-        newsc++
-        newsv = false
-    } else {
-        document.getElementById("news1").innerText = news[newsc]
-        newsc++
-        newsv = true
-    }
-    if (newsc == news.length) {
-        newsc = 0
-    }
-    return
-}
 
 function timeround() {
     totaltime++
     roundtime++
 }
 
-function sectotime(sec) {
+function newnews() {
+    news = [];
+    var newslp = findethelead()
+    var players= getnamearray()
+    
+
+    news.push(`you played ${sectotime(totaltime, 0)}`)
+    if (newslp != "") {
+        news.push(newslp)
+    }
+    news.push(`time per set${sectotime(roundtime / roundn,1)}`)
+
+    news.push(`there are ${60/players.length-roundn} rounds left`)
+
+    
+
+    document.getElementById("news1").innerText = news[0]
+    newsc = 1
+
+}
+
+function newstolead(){
+    document.getElementById("news1").classList.add("newsrefresh")
+    document.getElementById("leadplayer").classList.add("newsrefresh")
+    const myTimeout10= setTimeout(removenwes,300)
+    const myTimeout12= setTimeout(removenewsreset,1100)
+    function removenwes(){
+        document.getElementById("news1").hidden=true
+        document.getElementById("leadplayer").hidden=false
+    }
+}
+
+function removenewsreset(){
+    document.getElementById("news1").classList.add("newsrefresh")
+    document.getElementById("leadplayer").classList.add("newsrefresh")
+}
+function leadtonews(){
+    document.getElementById("news1").classList.add("newsrefresh")
+    document.getElementById("leadplayer").classList.add("newsrefresh")
+    const myTimeout11= setTimeout(removelead,300)
+    const myTimeout12= setTimeout(removenewsreset,1100)
+
+    
+    function removelead(){
+        document.getElementById("news1").hidden=false
+        document.getElementById("leadplayer").hidden=true
+    }
+}
+
+timenews = setInterval(repnews, 5000)
+
+
+function repnews() {
+    document.getElementById("news1").classList.add("newsrefresh")
+    const myTimeout8= setTimeout(changenews,500)
+    const myTimeout9= setTimeout(newsreset,1100)
+    function changenews(){
+        document.getElementById("news1").innerText = news[newsc]
+        newsc++
+    }
+    function newsreset(){
+        document.getElementById("news1").classList.remove("newsrefresh")
+    
+    }
+  
+    
+    if (newsc == news.length) {
+        newsc = 0
+    }
+    return
+}
+
+
+
+function sectotime(sec, unit) {
     var sec = Math.floor(sec)
     var min = 0
     var seconds = 0
@@ -576,7 +622,24 @@ function sectotime(sec) {
 
             } else if (sec === 0) {
                 var msg = ""
-                if (days != 0) {
+                if (unit==0){
+                    if (houers != 0) {
+                        if (houers == 1) {
+                            msg = msg + ` ${houers} Houer`
+                        } else {
+                            msg = msg + ` ${houers} Houers`
+                        }
+    
+                    }
+                    if (min != 0) {
+                        if (min == 1) {
+                            msg = msg + ` ${min} Minute`
+                        } else {
+                            msg = msg + ` ${min} Minutes`
+                        }
+                    }
+                    return msg
+                }else if (days != 0) {
                     if (days == 1) {
                         msg = msg + ` ${days} Day`
                     } else {
@@ -630,7 +693,7 @@ function fadein(name, time, volumex) {
     fadetin = setInterval(fadetimein, time)
     function fadetimein() {
         if (v == volumex) {
-            console.log("done")
+        
             window.clearInterval(fadetin)
         } else {
             v++
@@ -650,7 +713,6 @@ function fadeout(name, time, volumex) {
     fadetout = setInterval(fadetimeout, time)
     function fadetimeout() {
         if (b == volumex) {
-            console.log("done")
             window.clearInterval(fadetout)
             audio.pause()
         } else {
@@ -688,4 +750,28 @@ function musicout(){
     document.getElementById("musicmenue").classList.add("goin3")
     document.getElementById("musicbox").classList.remove("goin2")
     document.getElementById("musicbox").classList.add("goout3")
+}
+
+function kleadf(){
+    if(kleadoption){
+        if(predictioninput){
+      
+            document.getElementById("klead").classList.add("klead")
+            document.getElementById("kleadtext").classList.add("kleadtexta")
+            const audio = document.getElementById("kleadaudio")
+            audio.volume = 1
+            audio.load
+            audio.play()
+    
+            const myTimeout7 = setTimeout(kleadtimer, 18000);
+            function kleadtimer() {
+                fadein("music2", 10,volume2)
+                document.getElementById("klead").classList.remove("klead")
+                document.getElementById("kleadtext").classList.remove("kleadtexta")
+            }
+        }
+    }else{
+        fadein("music2", 10,volume2)
+    }
+  
 }
