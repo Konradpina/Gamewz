@@ -22,11 +22,17 @@ var volume2=80
 var volume3=50
 
 
-var news = ["Press Start next Round", "pleas start", "dont you want to play?", "i dont have all day", "are you serious"]
+// var news = ["Press Start next Round", "pleas start", "dont you want to play?", "i dont have all day", "are you serious"]
+var news=[]
 var newsv = true
 var newsc = 0
+var iphone=false
 
-
+function startnamesiphone(){
+    iphone=true
+    kleadoption=true
+    startnames()
+}
 function startnamesklead(){
     kleadoption=true
     startnames()
@@ -755,9 +761,13 @@ function musicout(){
 function kleadf(){
     if(kleadoption){
         if(predictioninput){
-      
+            
             document.getElementById("klead").classList.add("klead")
-            document.getElementById("kleadtext").classList.add("kleadtexta")
+            if(iphone){
+                document.getElementById("kleadtext").classList.add("kleadtexta2")
+            }else{
+                document.getElementById("kleadtext").classList.add("kleadtexta")
+            }
             const audio = document.getElementById("kleadaudio")
             audio.volume = 1
             audio.load
@@ -767,7 +777,11 @@ function kleadf(){
             function kleadtimer() {
                 fadein("music2", 10,volume2)
                 document.getElementById("klead").classList.remove("klead")
-                document.getElementById("kleadtext").classList.remove("kleadtexta")
+                if(iphone){
+                    document.getElementById("kleadtext").classList.remove("kleadtexta2")
+                }else{
+                    document.getElementById("kleadtext").classList.remove("kleadtexta")
+                }
             }
         }
     }else{
