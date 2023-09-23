@@ -765,13 +765,15 @@ function kleadf(){
             document.getElementById("klead").classList.add("klead")
             if(iphone){
                 document.getElementById("kleadtext").classList.add("kleadtexta2")
+                fadein("kleadaudio",0,100)
             }else{
                 document.getElementById("kleadtext").classList.add("kleadtexta")
+                const audio = document.getElementById("kleadaudio")
+                audio.volume = 1
+                audio.load
+                audio.play()
             }
-            const audio = document.getElementById("kleadaudio")
-            audio.volume = 1
-            audio.load
-            audio.play()
+            
     
             const myTimeout7 = setTimeout(kleadtimer, 18000);
             function kleadtimer() {
