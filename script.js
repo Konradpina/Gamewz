@@ -22,12 +22,25 @@ var volume2=80
 var volume3=50
 
 
-// var news = ["Press Start next Round", "pleas start", "dont you want to play?", "i dont have all day", "are you serious"]
-var news=[]
+var news = ["Press Start next Round", "pleas start", "dont you want to play?", "i dont have all day", "are you serious"]
+
 var newsv = true
 var newsc = 0
 var iphone=false
 
+function musicoffon(){
+    if (volume1===0){
+        volume1=100
+        volume2=80
+        volume3=50
+        document.getElementById("musicoffonbtn").innerText="Music ON"
+    }else{
+        volume1=0
+        volume2=0
+        volume3=0
+        document.getElementById("musicoffonbtn").innerText="Music OFF"
+    }
+}
 function startnamesiphone(){
     iphone=true
     kleadoption=true
@@ -39,7 +52,7 @@ function startnamesklead(){
 }
 
 function startnames() {
-    fadein("music3", 50, 100)
+    fadein("music3", 50, volume1)
     document.getElementById("startbox").classList.add("goout")
     document.getElementById("namebox").classList.add("goin")
     nameinput = true
@@ -58,10 +71,7 @@ function startbutton() {
 }
 
 
-addEventListener("keydown", (event) => nameip())
-
 function nameip() {
-
     if (nameinput) {
         if (namenumber >= 6) {
             start()
@@ -84,8 +94,8 @@ addEventListener("keypress", function (event) {
 
         }
         if (namenumber < 3) {
-            alert("pleas enter a Name")
-
+            alert(`pleas enter a Name for player ${namenumber+1}`)
+            document.getElementsByClassName("namei")[namenumber].focus()
             return
         }
         start()
@@ -182,6 +192,7 @@ function startnextround() {
             playerboxs[i].classList.remove("startgame4")
 
         }
+        news =["Look around you","this might be the last time", "that you like your company","Have Fun!","and dont forget","friends are the best enemies"]
         return
     }
     newnews()
@@ -222,6 +233,16 @@ function beginnprediction() {
 
 }
 
+
+addEventListener("keydown", (event) => numkey(event))
+
+function numkey(event){
+    if(isNaN(event.key)){
+        return
+    }else{
+        num(event.key)
+    }
+}
 function num(number) {
     if (predictioninput) {
         nonumber = nonumber + number
@@ -594,7 +615,7 @@ function repnews() {
     }
   
     
-    if (newsc == news.length) {
+    if (newsc >= news.length) {
         newsc = 0
     }
     return
