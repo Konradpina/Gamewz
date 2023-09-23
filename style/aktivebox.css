@@ -1,6 +1,7 @@
 .aab{
     background-image: var(--bimg);
-    
+     background:linear-gradient(0deg, rgba(0, 0, 0, 0.298), rgba(0, 0, 0, 0.869)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+     background-size: 200%;
 }
 .aktiveaktivebox{
     animation: erase 2.5s 0s forwards;  
@@ -26,13 +27,15 @@
     flex:1;
 }
 .ndisplaybox{
-    background-image: var(--bimg);
+    background:linear-gradient(0deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.869)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+
     
     display: flex;
     justify-content: space-between; 
 }
 .playerbox{
-    background-image: var(--bimg);
+    background:linear-gradient(0deg, rgba(6, 2, 27, 0.17), rgb(0, 0, 0)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+    background-size: 200%;
     object-fit:scale-down;
     /* background-color: rgba(0, 0, 0, 0.692); */
     box-shadow:var(--nbcolor) 0px 0px 10px;

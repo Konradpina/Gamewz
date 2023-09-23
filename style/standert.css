@@ -6,7 +6,7 @@
     --sside:10vw;
     --sheight:10vh;
     --bimg:url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
-
+    overflow-x: hidden;
     --nbcolor:rgb(0, 30, 255);
 }
 body{
@@ -19,13 +19,17 @@ body{
     overflow-x: hidden;
     font-size: 5vh;
     font-family: 'Pirata One', cursive;
+    background:linear-gradient(50deg, rgba(0, 0, 0, 0.716), rgba(0, 0, 0, 0.305)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
 
+    background-size:100%;
+    
     }
 .body2{
     /* background-position: left; */
-
+    background:linear-gradient(50deg, rgba(0, 0, 0, 0.716), rgba(0, 0, 0, 0.697)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
     background-position:right top;
     object-fit: fill;
+    background-size: 100% ;
     transition: all 5s ;
 }
 .goout{
@@ -526,7 +530,7 @@ body{
             opacity: 0;
         }
         100%{
-            opacity: 1;
+            opacity: 1;   
         }
     }
     
@@ -542,7 +546,9 @@ body{
     }
     
     .infobar{
-        background-image: var(--bimg);
+        background:linear-gradient(180deg, rgba(0, 0, 0, 0.858), rgba(3, 1, 15, 0.847)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+      
+        background-size: 100%;
         background-color: black;
         height: 7vh;
         position: fixed;

@@ -76,8 +76,10 @@ function nameip() {
         if (namenumber >= 6) {
             start()
             start = true
+            nameinput=false
             return
         }
+        document.getElementsByClassName("nameb")[namenumber].classList.remove("namebh")
         document.getElementsByClassName("namei")[namenumber].focus()
     }
 }
@@ -98,7 +100,11 @@ addEventListener("keypress", function (event) {
             document.getElementsByClassName("namei")[namenumber].focus()
             return
         }
+        nameinput=false
         start()
+    }else{
+        console.log("no")
+        return
     }
 
 })

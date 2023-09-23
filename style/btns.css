@@ -1,6 +1,6 @@
 
 .btnsbox{
-                
+    
     display:flex;
     position: absolute;
     top: 40vh;
@@ -10,7 +10,9 @@
     
 }
 .btnsbox button{
-    background-image: var(--bimg);
+    background:linear-gradient(-30deg, rgb(0, 0, 0), rgba(6, 2, 24, 0.5)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+
+    background-size:150%;
     background-color: black;
     margin:1vh;
     color: var(--fcolor);
@@ -25,7 +27,7 @@
 
 }
 .btnsbox button:hover,.Keyborad button:hover{
-    background-position:100% 9%;
+    background-size:200%;
     box-shadow: 0px 0px 50px var(--fcolor);
    
 }
@@ -39,7 +41,6 @@ flex:3;
 }
 
 .Keyborad{
-
     position: absolute;
     top: 33vh;
     left:110vw;
@@ -48,7 +49,10 @@ flex:3;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .btnk{
-    background-image: var(--bimg);
+    background:linear-gradient(-10deg, rgb(0, 0, 0), rgba(11, 4, 43, 0.571)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+
+    background-size:220%;
+
     margin:1vh;
     background-color: black;
     font-family: 'Pirata One', cursive;
@@ -70,12 +74,16 @@ flex:3;
 
 }
 .btnk2{
+    background:linear-gradient(-10deg, rgb(0, 0, 0), rgba(33, 2, 2, 0.5)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+
+    background-size:180%;
     background-position: 100% 8%;
     animation: change 2s forwards;
     animation-delay: calc(var(--oder)*50ms);
 }
 
 .musicbox{
+    overflow-x: hidden;
     margin: 1vh;
     position: absolute;
     bottom: 0vh;
@@ -86,7 +94,7 @@ flex:3;
     justify-content: space-around;
 }
 .musiccd{
-    
+    overflow-x: hidden;
     text-align: center;
     width: 26vw;
     height: 7vh;
@@ -98,16 +106,19 @@ flex:3;
     transition: all 0.4s;
 }
 .musiccd div{
+    overflow-x: hidden;
     font-size: 3vh;
     margin: 0.5vh;
 }
 .musiccd input{
+    overflow-x: hidden;
     width: 23vw;
     height: 1vh;
 
     
 }
 .musicdone{
+    overflow-x: hidden;
     text-align: center;
     width: 10vw;
     height: 6vh;
@@ -125,11 +136,13 @@ flex:3;
 
 }
 .musicdone:hover,.musiccd:hover,.musicmenue button:hover{
+    overflow-x: hidden;
     text-shadow: 0px 0px 30px var(--fcolor);
     border: 1px var(--tcolor) solid;
     color: var(--tcolor);
 }
 .musicmenue{
+    overflow-x: hidden;
     margin: 1vh;
     position: absolute;
     bottom: 0vh;
@@ -140,6 +153,7 @@ flex:3;
     justify-content: end;
 }
 .musicmenue button{
+    overflow-x: hidden;
     text-align: center;
     width: 20vw;
     height: 7vh;
@@ -155,8 +169,10 @@ flex:3;
     transition: all 0.4s;
 }
 .musicin{
+    overflow-x: hidden;
     animation: musicin 2s forwards ;
 }
 .musicout{
+    overflow-x: hidden;
     animation: musicin 2s forwards ;
 }
