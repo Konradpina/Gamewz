@@ -12,7 +12,7 @@
 
 
 .allpointsbox{
-    background:linear-gradient(0deg, rgba(7, 2, 35, 0.444), rgba(0, 0, 0, 0.775)) ;
+    background:linear-gradient(0deg, rgba(7, 2, 35, 0.159), rgba(0, 0, 0, 0.175)) ;
     background-size: 100%;
     border: var(--nbcolor) 1px solid;
     box-shadow:var(--nbcolor) 0px 0px 10px;

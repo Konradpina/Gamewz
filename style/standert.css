@@ -27,6 +27,8 @@ body{
 .body2{
     /* background-position: left; */
     background:linear-gradient(50deg, rgba(0, 0, 0, 0.716), rgba(0, 0, 0, 0.697)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
+   
+  
     background-position:right top;
     object-fit: fill;
     background-size: 100% ;

@@ -57,6 +57,10 @@ function startnames() {
     document.getElementById("namebox").classList.add("goin")
     nameinput = true
     var ipfields = document.getElementsByClassName("namei")
+    const nametime = setTimeout(nametimefoucus, 1300);
+    function nametimefoucus() {
+        document.getElementsByClassName("namei")[namenumber].focus()
+    }
     for (i = 0; i < ipfields.length; i++) {
         ipfields[i].value = ""
     }
@@ -298,11 +302,11 @@ function num(number) {
 
         countp++
         if (countp == getnamearray().length) {
-            endmade()
             countp = 0
             for (i = 0; i < playerboxs.length; i++) {
                 document.getElementsByClassName("playerbox")[i].classList.remove("activeplayer2")
             }
+            endmade()
         }
         calculatepoints()
     }
@@ -414,9 +418,11 @@ function addpoints() {
 }
 
 function resetround() {
+    document.getElementById("music1").pause()
     firstround = true
     clearall()
-    nextround()
+    
+    startnextround()
 }
 function clearall() {
     var pred = document.getElementsByClassName("prd")
@@ -792,12 +798,16 @@ function kleadf(){
             document.getElementById("klead").classList.add("klead")
             if(iphone){
                 document.getElementById("kleadtext").classList.add("kleadtexta2")
-                fadein("kleadaudio",0,100)
+                // fadein("kleadaudio",0,100)
+                const audio = document.getElementById("kleadaudio")
+                audio.volume = 1
+                audio.load()
+                audio.play()
             }else{
                 document.getElementById("kleadtext").classList.add("kleadtexta")
                 const audio = document.getElementById("kleadaudio")
                 audio.volume = 1
-                audio.load
+                audio.load()
                 audio.play()
             }
             

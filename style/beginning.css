@@ -1,5 +1,5 @@
 .startbox, .namebox{
-    background:linear-gradient(-45deg, black, rgba(6, 6, 42, 0.305)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg) ;
+    background:linear-gradient(-45deg, rgb(0, 0, 0), rgba(6, 6, 42, 0.305)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg) ;
 }
 .startbox, .namebox{
     background-size:100%;
