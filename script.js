@@ -798,11 +798,11 @@ function kleadf(){
             document.getElementById("klead").classList.add("klead")
             if(iphone){
                 document.getElementById("kleadtext").classList.add("kleadtexta2")
-                // fadein("kleadaudio",0,100)
-                const audio = document.getElementById("kleadaudio")
-                audio.volume = 1
-                audio.load()
-                audio.play()
+                fadein("kleadaudio",0,100)
+                // const audio = document.getElementById("kleadaudio")
+                // audio.volume = 1
+                // audio.load()
+                // audio.play()
             }else{
                 document.getElementById("kleadtext").classList.add("kleadtexta")
                 const audio = document.getElementById("kleadaudio")
@@ -818,8 +818,10 @@ function kleadf(){
                 document.getElementById("klead").classList.remove("klead")
                 if(iphone){
                     document.getElementById("kleadtext").classList.remove("kleadtexta2")
+                    document.getElementById("kleadaudio").pause()
                 }else{
                     document.getElementById("kleadtext").classList.remove("kleadtexta")
+                    document.getElementById("kleadaudio").pause()
                 }
             }
         }
