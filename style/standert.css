@@ -46,6 +46,7 @@ body{
     animation: goin2 3s forwards ;
 }
 .goout3{
+    overflow-x: hidden;
     animation: goout3 3s forwards ;
 }
 .goin3{

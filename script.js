@@ -798,7 +798,7 @@ function kleadf(){
             document.getElementById("klead").classList.add("klead")
             if(iphone){
                 document.getElementById("kleadtext").classList.add("kleadtexta2")
-                fadein("kleadaudio",0,100)
+                fadein("kleadaudio",1,100)
                 // const audio = document.getElementById("kleadaudio")
                 // audio.volume = 1
                 // audio.load()
