@@ -814,7 +814,7 @@ function kleadf(){
     
             const myTimeout7 = setTimeout(kleadtimer, 18000);
             function kleadtimer() {
-                fadein("music2", 10,volume2)
+                fadein("kleadaudio", 10,volume2)
                 document.getElementById("klead").classList.remove("klead")
                 if(iphone){
                     document.getElementById("kleadtext").classList.remove("kleadtexta2")

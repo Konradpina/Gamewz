@@ -371,8 +371,10 @@ body{
         0%{
             left:  0;
             right: 0;
+            overflow-x: hidden;
         }
         100%{
+            overflow-x: hidden;
             left:-110vw;
             right:110vw
         }
