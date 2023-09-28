@@ -798,7 +798,8 @@ function kleadf(){
             document.getElementById("klead").classList.add("klead")
             if(iphone){
                 document.getElementById("kleadtext").classList.add("kleadtexta2")
-                fadein("music3", 10,volume2)
+
+                fadein("kleadaudio", 10,volume2)
                 // const audio = document.getElementById("kleadaudio")
                 // audio.volume = 1
                 // audio.load()
@@ -814,7 +815,7 @@ function kleadf(){
     
             const myTimeout7 = setTimeout(kleadtimer, 18000);
             function kleadtimer() {
-                fadein("kleadaudio", 10,volume2)
+                fadein("music2", 10,volume2)
                 document.getElementById("klead").classList.remove("klead")
                 if(iphone){
                     document.getElementById("kleadtext").classList.remove("kleadtexta2")
