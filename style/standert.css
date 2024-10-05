@@ -549,7 +549,7 @@ body{
     
     .infobar{
         background:linear-gradient(180deg, rgba(0, 0, 0, 0.858), rgba(3, 1, 15, 0.847)), url(../img/david-jorre-oQbLeq4nOek-unsplash.jpg);
-      
+        width: 97.8vw;
         background-size: 100%;
         background-color: black;
         height: 7vh;
